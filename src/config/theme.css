@@ -1,0 +1,51 @@
+/* ============================================================
+   TECHNITEST THEME — change colors here only
+   ============================================================ */
+
+:root {
+  /* Page backgrounds */
+  --brand-page-bg: #ffffff;
+  --brand-header-bg: #ffffff;
+
+  /* Brand accent (buttons, active nav, badges) */
+  --brand-primary: #f39200;
+  --brand-primary-hover: #db8300;
+  --brand-primary-foreground: #ffffff;
+
+  /* Text */
+  --brand-text: #2d2d2d;
+  --brand-text-muted: #6b7280;
+
+  /* Links */
+  --brand-link: #2563eb;
+
+  /* Borders & dividers */
+  --brand-border: #e5e7eb;
+
+  /* Footer */
+  --brand-footer-from: #0c2448;
+  --brand-footer-to: #1e4a7a;
+  --brand-footer-text: #ffffff;
+  --brand-footer-muted: rgba(255, 255, 255, 0.75);
+
+  /* shadcn mappings (keep in sync with brand colors above) */
+  --background: var(--brand-page-bg);
+  --foreground: var(--brand-text);
+  --card: var(--brand-page-bg);
+  --card-foreground: var(--brand-text);
+  --popover: var(--brand-page-bg);
+  --popover-foreground: var(--brand-text);
+  --primary: var(--brand-primary);
+  --primary-foreground: var(--brand-primary-foreground);
+  --secondary: #f3f4f6;
+  --secondary-foreground: var(--brand-text);
+  --muted: #f3f4f6;
+  --muted-foreground: var(--brand-text-muted);
+  --accent: #f3f4f6;
+  --accent-foreground: var(--brand-text);
+  --destructive: #ef4444;
+  --border: var(--brand-border);
+  --input: var(--brand-border);
+  --ring: var(--brand-primary);
+  --radius: 0.625rem;
+}
