@@ -9,6 +9,7 @@ import {
   footerQuickLinks,
   siteContact,
 } from "@/config/site";
+import Image from "next/image";
 
 export function Footer() {
   return (
@@ -17,7 +18,16 @@ export function Footer() {
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           {/* Newsletter */}
           <div className="space-y-4">
-            <Logo variant="light" />
+          <Link href="/" className="shrink-0">
+            <Image
+              src="/technitest-logo-light.png"
+              alt="Technitest"
+              width={165}
+              height={48}
+              priority
+              className="h-11 w-auto object-contain"
+            />
+          </Link>
             <p className="text-sm leading-relaxed text-footer-muted">
               Join our newsletter to stay up to date on features and releases.
             </p>

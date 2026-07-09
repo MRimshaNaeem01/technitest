@@ -1,0 +1,38 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Font family (will be set via next/font) */
+    --font-family: var(--font-poppins), poppins;
+    
+  /* Primary colors */
+  --color-primary: #3b82f6;
+  --color-primary-dark: #2563eb;
+  --color-secondary: #64748b;
+  --color-accent: #8b5cf6;
+  --color-background: #ffffff;
+  --color-foreground: #0f172a;
+  --color-muted: #f1f5f9;
+  --color-muted-foreground: #64748b;
+  --color-border: #e2e8f0;
+  --color-card: #ffffff;
+  --color-card-foreground: #0f172a;
+
+  }
+
+  html {
+    font-family: var(--font-family);
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+  }
+
+  body {
+    font-family: var(--font-family);
+    margin: 0;
+    min-height: 100vh;
+    padding: 0;
+  }
+}

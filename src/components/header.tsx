@@ -1,26 +1,38 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Bell, ExternalLink, ShoppingBag } from "lucide-react";
 
 import { AppButton } from "@/components/common/app-button";
 import { Container } from "@/components/common/container";
-import { Logo } from "@/components/common/logo";
 import { NavLink } from "@/components/common/nav-link";
 import { mainNavLinks } from "@/config/site";
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-header">
+    <header className="sticky top-0 z-50 bg-white">
       <Container>
-        <div className="flex h-[72px] items-center justify-between gap-6">
-          <Logo />
+        <div className="flex h-20 items-center justify-between">
+          {/* Logo */}
+          <Link href="/" className="shrink-0">
+            <Image
+              src="/technitest_logo.png"
+              alt="Technitest"
+              width={165}
+              height={48}
+              priority
+              className="h-11 w-auto object-contain"
+            />
+          </Link>
 
-          <nav className="hidden items-center gap-8 lg:flex">
+          {/* Navigation */}
+          <nav className="hidden items-center gap-10 lg:flex">
             {mainNavLinks.map((link) => (
               <NavLink key={link.href} href={link.href} label={link.label} />
             ))}
           </nav>
 
-          <div className="flex items-center gap-4">
+          {/* Right Side */}
+          <div className="flex items-center gap-5">
             <div className="hidden h-8 w-px bg-border md:block" />
 
             <Link
@@ -34,10 +46,10 @@ export function Header() {
             <button
               type="button"
               aria-label="Shopping cart"
-              className="relative text-foreground hover:text-brand"
+              className="relative"
             >
-              <ShoppingBag className="size-5" strokeWidth={1.5} />
-              <span className="absolute -top-1.5 -right-1.5 flex size-4 items-center justify-center rounded-full bg-brand text-[10px] font-bold text-white">
+              <ShoppingBag className="size-5 stroke-[1.7]" />
+              <span className="absolute -right-1.5 -top-1.5 flex size-4 items-center justify-center rounded-full bg-brand text-[10px] font-bold text-white">
                 0
               </span>
             </button>
@@ -45,13 +57,17 @@ export function Header() {
             <button
               type="button"
               aria-label="Notifications"
-              className="relative text-foreground hover:text-brand"
+              className="relative"
             >
-              <Bell className="size-5" strokeWidth={1.5} />
-              <span className="absolute top-0 right-0 size-2 rounded-full bg-brand" />
+              <Bell className="size-5 stroke-[1.7]" />
+              <span className="absolute right-0 top-0 size-2 rounded-full bg-brand" />
             </button>
 
-            <AppButton href="/login" size="sm">
+            <AppButton
+              href="/login"
+              className="rounded-full px-7"
+              size="sm"
+            >
               Login/Signup
             </AppButton>
           </div>
