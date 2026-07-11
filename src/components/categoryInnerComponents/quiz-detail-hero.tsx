@@ -1,0 +1,32 @@
+import Image from "next/image";
+
+import { Container } from "@/components/common/container";
+
+type QuizDetailHeroProps = {
+  breadcrumb: React.ReactNode;
+  imageSrc: string;
+  imageAlt?: string;
+};
+
+export function QuizDetailHero({
+  breadcrumb,
+  imageSrc,
+  imageAlt = "Quiz banner",
+}: QuizDetailHeroProps) {
+  return (
+    <section className="bg-white pt-8">
+      <Container>
+        <p className="mb-6 text-sm text-gray-500">{breadcrumb}</p>
+        <div className="overflow-hidden rounded-xl">
+          <Image
+            src={imageSrc}
+            alt={imageAlt}
+            width={1200}
+            height={260}
+            className="h-[260px] w-full object-cover"
+          />
+        </div>
+      </Container>
+    </section>
+  );
+}

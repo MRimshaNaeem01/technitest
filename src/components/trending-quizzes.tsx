@@ -21,15 +21,17 @@ type TrendingQuizzesProps = {
   eyebrow?: string;
   title?: string;
   quizzes: TrendingQuiz[];
+  className?: string;
 };
 
 export function TrendingQuizzes({
   eyebrow = "Quizzes",
   title = "Trending Quizzes",
   quizzes,
+  className,
 }: TrendingQuizzesProps) {
   return (
-    <section className="bg-white py-20">
+    <section className={className ?? "bg-white py-20"}>
       <Container>
         <div className="mb-10">
           {eyebrow && (
