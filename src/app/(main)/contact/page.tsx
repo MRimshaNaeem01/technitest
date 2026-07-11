@@ -37,7 +37,7 @@ export default function ContactPage() {
         description="Have questions about our quizzes, certification, or anything else? We're here to help."
       />
       <ContactInfoCards items={contactInfoItems} />
-      <ContactForm imageSrc="/contact/contact-img.png" />
+      <ContactForm imageSrc="/auth/auth3.png" />
     </>
   );
 }
