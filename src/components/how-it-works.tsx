@@ -41,7 +41,7 @@ export function HowItWorks({
         <div className="flex items-center justify-center gap-0 md:gap-2 lg:gap-4">
           {steps.map((step, index) => (
             <div key={step.title} className="flex items-center gap-0 md:gap-2 lg:gap-4">
-              <div className="flex h-[230px] w-[240px] flex-col items-center justify-center rounded-xl border border-[#E6E4FF] bg-white px-6 text-center">
+              <div className="flex h-[230px] w-[240px] flex-col items-center justify-center rounded-xl bg-white px-6 text-center shadow-[0_8px_24px_rgba(0,0,0,0.08)] ring-0 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(0,0,0,0.12)]">
                 <div className="mb-4 text-brand">
                   {step.icon ?? defaultIcons[index] ?? null}
                 </div>

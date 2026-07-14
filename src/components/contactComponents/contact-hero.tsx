@@ -6,14 +6,14 @@ type ContactHeroProps = {
 
 export function ContactHero({ breadcrumb, title, description }: ContactHeroProps) {
   return (
-    <section className="relative flex min-h-[280px] items-center justify-center overflow-hidden bg-[#F7F7FF]">
-      <div className="py-14 text-center">
+    <section className="relative flex min-h-[300px] items-center justify-center overflow-hidden bg-[#F6F6FF]">
+      <div className="py-16 text-center">
         <p className="mb-4 text-sm text-gray-500">{breadcrumb}</p>
-        <h1 className="text-[34px] font-semibold leading-tight text-black">
+        <h1 className="text-[34px] font-semibold leading-tight text-[#111]">
           {title}
         </h1>
         {description && (
-          <p className="mx-auto mt-4 max-w-[620px] text-[#5F5F6B]">
+          <p className="mx-auto mt-4 max-w-[620px] text-[#666]">
             {description}
           </p>
         )}
@@ -21,7 +21,7 @@ export function ContactHero({ breadcrumb, title, description }: ContactHeroProps
 
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <svg
-          className="absolute left-[6%] top-1/4 h-8 w-8 text-brand opacity-20"
+          className="absolute left-[6%] top-1/4 h-8 w-8 text-[#F5A000] opacity-20"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
@@ -30,7 +30,7 @@ export function ContactHero({ breadcrumb, title, description }: ContactHeroProps
           <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
         </svg>
         <svg
-          className="absolute right-[8%] top-[30%] h-10 w-10 text-brand opacity-15"
+          className="absolute right-[8%] top-[30%] h-10 w-10 text-[#F5A000] opacity-15"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
@@ -38,6 +38,20 @@ export function ContactHero({ breadcrumb, title, description }: ContactHeroProps
         >
           <path d="M4 4L20 20" strokeDasharray="3 3" />
           <path d="M20 4L4 20" strokeDasharray="3 3" />
+        </svg>
+        <svg
+          className="absolute bottom-8 left-[12%] h-5 w-5 text-[#F5A000] opacity-20"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+        >
+          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+        </svg>
+        <svg
+          className="absolute right-[15%] bottom-8 h-3 w-3 text-[#F5A000] opacity-20"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+        >
+          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
         </svg>
       </div>
     </section>

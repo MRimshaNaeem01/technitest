@@ -30,10 +30,14 @@ export function LearningCategories({
         </h2>
       </div>
 
-      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
+      <div className="flex flex-wrap justify-center gap-5">
         {categories.map((category) => (
-          <Link key={category.title} href={category.href}>
-            <Card className="border-none bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+          <Link
+            key={category.title}
+            href={category.href}
+            className="w-full sm:w-[calc(50%-0.625rem)] lg:w-[calc(20%-1rem)]"
+          >
+            <Card className="bg-white shadow-[0_8px_24px_rgba(0,0,0,0.08)] ring-0 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(0,0,0,0.12)]">
               <CardContent className="flex h-[140px] flex-col items-center justify-center text-center">
                 <div className="mb-3 text-4xl">{category.icon}</div>
                 <h3 className="text-base font-medium text-black">

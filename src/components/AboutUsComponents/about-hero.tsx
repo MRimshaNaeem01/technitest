@@ -2,17 +2,22 @@ type AboutHeroProps = {
   eyebrow?: string;
   title: string;
   description?: string;
+  breadcrumb?: React.ReactNode;
 };
 
 export function AboutHero({
   eyebrow = "About Us",
   title,
   description,
+  breadcrumb,
 }: AboutHeroProps) {
   return (
     <section className="relative flex min-h-[330px] items-center justify-center overflow-hidden bg-[#F5F5FF]">
       <div className="py-16 text-center">
-        {eyebrow && (
+        {breadcrumb && (
+          <p className="mb-6 text-sm text-gray-500">{breadcrumb}</p>
+        )}
+        {eyebrow && !breadcrumb && (
           <p className="mb-4 text-sm font-medium text-brand">{eyebrow}</p>
         )}
         <h1 className="mx-auto max-w-3xl text-[34px] font-semibold leading-tight text-black">
@@ -48,6 +53,8 @@ export function AboutHero({
           <path d="M20 4L4 20" strokeDasharray="2 3" />
         </svg>
       </div>
+
+      <div className="absolute bottom-0 left-0 right-0 mx-auto h-0.5 w-16 bg-[#2945FF]" />
     </section>
   );
 }

@@ -5,21 +5,18 @@ import { ContactForm } from "@/components/contactComponents/contact-form";
 const contactInfoItems = [
   {
     title: "Support",
-    description:
-      "Our friendly support team is always ready to help you with any questions or issues.",
+    description: "Our friendly team is here to help.",
     contact: "support@technitest.com",
   },
   {
     title: "Sales",
-    description:
-      "Looking to partner with us or purchase in bulk? Get in touch with our sales team.",
+    description: "Question or Queries? Get in Touch!",
     contact: "sales@technitest.com",
   },
   {
     title: "Phone",
-    description:
-      "Prefer to talk? Give us a call and we'll be happy to assist you directly.",
-    contact: "+1 (732) 262-3141",
+    description: "Mon - Fri from 9am to 6pm",
+    contact: "+1 (555) 000-0000",
   },
 ];
 
@@ -37,7 +34,7 @@ export default function ContactPage() {
         description="Have questions about our quizzes, certification, or anything else? We're here to help."
       />
       <ContactInfoCards items={contactInfoItems} />
-      <ContactForm imageSrc="/auth/auth3.png" />
+      <ContactForm imageSrc="/aboutUs/img2.png" />
     </>
   );
 }

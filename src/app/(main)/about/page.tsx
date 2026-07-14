@@ -117,6 +117,12 @@ export default function AboutPage() {
   return (
     <>
       <AboutHero
+        breadcrumb={
+          <>
+            Home <span className="mx-1">›</span>{" "}
+            <span className="text-black">About Us</span>
+          </>
+        }
         title="Empowering You Through Knowledge."
         description="We are dedicated to providing high-quality, skill-based quizzes that help learners grow, earn certificates, and achieve their goals."
       />

@@ -65,7 +65,7 @@
     @apply bg-page text-foreground;
   }
   html {
-    @apply --font-poppins;
+    font-family: var(--font-poppins);
   }
 }
 
@@ -75,4 +75,13 @@
     var(--brand-footer-from),
     var(--brand-footer-to)
   );
+}
+
+@keyframes pulse-soft {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+@utility animate-pulse-soft {
+  animation: pulse-soft 3s ease-in-out infinite;
 }

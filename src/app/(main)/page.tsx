@@ -33,11 +33,7 @@ export default function HomePage() {
       <Container>
         <LearningCategories categories={categories} />
       </Container>
-      <TrendingQuizzes
-        eyebrow="Quizzes"
-        title="Trending Quizzes"
-        quizzes={trendingQuizzes}
-      />
+
       <AchievementBanner
         eyebrow="About Us"
         title="Turning Effort into Achievement"
@@ -54,12 +50,6 @@ export default function HomePage() {
         title="Simple Steps. Smarter Results"
         steps={howItWorksSteps}
       />
-      <HallOfAchievers
-        eyebrow="Scorers"
-        title="Hall of Achievers"
-        achievers={achievers}
-      />
-      
       <QuizCtaBanner
         title="Boost Your Skills Today – Take a Quiz & Get Certified!"
         description="Join thousands who've leveled up with our easy online quizzes and official certificates."
@@ -67,6 +57,18 @@ export default function HomePage() {
         buttonHref="/categories"
         imageSrc="/girl2.png"
       />
+  <TrendingQuizzes
+        eyebrow="Quizzes"
+        title="Trending Quizzes"
+        quizzes={trendingQuizzes}
+      />
+      <HallOfAchievers
+        eyebrow="Scorers"
+        title="Hall of Achievers"
+        achievers={achievers}
+      />
+    
+
       <Testimonials
         eyebrow="Testimonials"
         title="Real People, Real Reviews!"
