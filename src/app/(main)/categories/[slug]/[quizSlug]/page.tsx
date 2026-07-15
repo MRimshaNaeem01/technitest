@@ -1,14 +1,17 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { BarChart3, CircleHelp, Clock3, Heart, Star } from "lucide-react";
 
 import { Container } from "@/components/common/container";
 import { QuizDetailHero } from "@/components/categoryInnerComponents/quiz-detail-hero";
 import { QuizInfoCard } from "@/components/categoryInnerComponents/quiz-info-card";
-import { QuizNoteModal } from "@/components/categoryInnerComponents/quiz-note-modal";
 import { QuizReviews } from "@/components/categoryInnerComponents/quiz-reviews";
+import { ImportantNoteModal } from "@/components/quiz/ImportantNoteModal";
+import { UserAuthenticationModal } from "@/components/quiz/UserAuthenticationModal";
+import type { QuizStartStep } from "@/types/quiz";
 
 const reviews = [
   {
@@ -87,7 +90,16 @@ const relatedQuizzes = [
 ];
 
 export default function QuizDetailPage() {
-  const [modalOpen, setModalOpen] = useState(true);
+  const router = useRouter();
+  const [startStep, setStartStep] = useState<QuizStartStep>("idle");
+  const quizSlug = "advanced-marketing-quiz-bba";
+
+  const handleStartQuiz = () => setStartStep("important-note");
+  const handleProceed = () => setStartStep("user-authentication");
+  const handleStartAuth = () => {
+    setStartStep("idle");
+    router.push(`/quiz/${quizSlug}/face-authentication`);
+  };
 
   return (
     <>
@@ -116,7 +128,7 @@ export default function QuizDetailPage() {
           { label: "Certificate Level", value: "Advanced" },
         ]}
         ctaText="Start Quiz"
-        ctaHref="#"
+        onCtaClick={handleStartQuiz}
       />
       <section className="bg-white pb-20">
         <Container>
@@ -184,10 +196,15 @@ export default function QuizDetailPage() {
         </Container>
       </section>
       <QuizReviews reviews={reviews} />
-      <QuizNoteModal
-        isOpen={modalOpen}
-        onClose={() => setModalOpen(false)}
-        onProceed={() => setModalOpen(false)}
+      <ImportantNoteModal
+        isOpen={startStep === "important-note"}
+        onClose={() => setStartStep("idle")}
+        onProceed={handleProceed}
+      />
+      <UserAuthenticationModal
+        isOpen={startStep === "user-authentication"}
+        onClose={() => setStartStep("idle")}
+        onStart={handleStartAuth}
       />
     </>
   );

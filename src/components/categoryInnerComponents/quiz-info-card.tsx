@@ -11,6 +11,7 @@ type QuizInfoCardProps = {
   details: { label: string; value: string }[];
   ctaText?: string;
   ctaHref?: string;
+  onCtaClick?: () => void;
 };
 
 export function QuizInfoCard({
@@ -22,7 +23,8 @@ export function QuizInfoCard({
   description,
   details,
   ctaText = "Start Quiz",
-  ctaHref = "#",
+  ctaHref,
+  onCtaClick,
 }: QuizInfoCardProps) {
   return (
     <section className="relative bg-white pb-20 pt-8">
@@ -64,7 +66,7 @@ export function QuizInfoCard({
           </div>
 
           <div className="mt-8">
-            <AppButton href={ctaHref} size="lg">
+            <AppButton href={ctaHref} onClick={onCtaClick} size="lg">
               {ctaText}
             </AppButton>
           </div>
