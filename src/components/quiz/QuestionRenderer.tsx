@@ -1,7 +1,6 @@
 "use client";
 
 import type { QuizQuestion } from "@/types/quiz";
-import { cn } from "@/lib/utils";
 
 type QuestionRendererProps = {
   question: QuizQuestion;
@@ -18,22 +17,20 @@ export function QuestionRenderer({
 }: QuestionRendererProps) {
   return (
     <div>
-      <p className="mb-10 text-[24px] font-medium leading-[1.4] text-[#111111] sm:text-[28px]">
+      <p className="max-w-[620px] font-poppins text-[20px] font-medium leading-[1.45] text-[#111111]">
         {question.question}
       </p>
 
-      <div className="space-y-1">
+      <div className="mt-10 space-y-6">
         {question.options.map((option) => {
           const isSelected = selectedAnswer === option.id;
 
           return (
             <label
               key={option.id}
-              className={cn(
-                "flex cursor-pointer items-center gap-6 rounded-lg py-4 transition-colors",
-                !isLocked && "hover:bg-gray-50",
-                isLocked && "cursor-not-allowed opacity-60"
-              )}
+              className={`flex cursor-pointer items-center gap-5 font-poppins text-[16px] font-normal text-[#111111] transition-colors ${
+                isLocked ? "cursor-not-allowed opacity-60" : ""
+              }`}
             >
               <input
                 type="radio"
@@ -41,18 +38,16 @@ export function QuestionRenderer({
                 checked={isSelected}
                 onChange={() => !isLocked && onSelect(option.id)}
                 disabled={isLocked}
-                className="h-6 w-6 shrink-0 accent-[#2F3CFF]"
+                className="h-[18px] w-[18px] shrink-0 cursor-pointer accent-[#2945FF]"
               />
-              <span className="text-[18px] text-black sm:text-[20px]">
-                {option.label}
-              </span>
+              <span>{option.label}</span>
             </label>
           );
         })}
       </div>
 
       {isLocked && (
-        <p className="mt-6 text-center text-sm text-red-500">
+        <p className="mt-5 text-center text-[12px] font-normal text-[#FF2D3D]">
           Time expired for this question.
         </p>
       )}

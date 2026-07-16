@@ -33,7 +33,7 @@ export default function QuizAttemptPage({ params }: QuizAttemptPageProps) {
 
   if (!quiz) {
     return (
-      <main className="flex min-h-screen items-center justify-center bg-white">
+      <main className="flex min-h-screen items-center justify-center bg-[#F6F7FF]">
         <div className="text-center">
           <h1 className="mb-4 text-xl font-bold text-gray-900">
             Quiz Not Found
@@ -106,39 +106,54 @@ export default function QuizAttemptPage({ params }: QuizAttemptPageProps) {
   };
 
   return (
-    <div className="min-h-screen bg-white">
-      {/* Header */}
-      <QuizHeader
-        quizTitle={quiz.title}
-        currentQuestion={currentIndex + 1}
-        totalQuestions={quiz.questions.length}
-        percentage={percentage}
-        onPrev={handlePrev}
-        onNext={handleNext}
-        timerDuration={quiz.durationPerQuestion}
-        onTimerTimeUp={handleTimeUp}
-        timerKey={currentQuestion.id}
-        isTimerLocked={isExpired || isSubmitted}
-      />
+    <div className="min-h-screen bg-[#F6F7FF] px-10 py-8">
+      <div className="w-full overflow-hidden rounded-[16px] bg-white shadow-sm">
+        {/* Header */}
+        <QuizHeader
+          quizTitle={quiz.title}
+          currentQuestion={currentIndex + 1}
+          totalQuestions={quiz.questions.length}
+          percentage={percentage}
+          onPrev={handlePrev}
+          onNext={handleNext}
+          timerDuration={quiz.durationPerQuestion}
+          onTimerTimeUp={handleTimeUp}
+          timerKey={currentQuestion.id}
+          isTimerLocked={isExpired || isSubmitted}
+        />
 
-      {/* Question Area */}
-      <main className="relative min-h-[calc(100vh-140px)] px-6 py-16 sm:px-10 lg:px-16">
-        {/* Bookmark */}
-        <button
-          onClick={handleToggleBookmark}
-          aria-label={isBookmarked ? "Remove bookmark" : "Bookmark question"}
-          className="absolute right-6 top-10 flex size-12 items-center justify-center rounded-full bg-white shadow-md transition-colors hover:shadow-lg sm:right-12"
-        >
-          <Heart
-            className={`size-5 transition-colors ${
-              isBookmarked
-                ? "fill-brand text-brand"
-                : "text-gray-800"
-            }`}
-          />
-        </button>
+        {/* Question Area */}
+        <main className="relative mx-auto w-full max-w-[720px] px-6 pb-[65px] pt-[64px]">
+          {/* Bookmark */}
+          <button
+            onClick={handleToggleBookmark}
+            aria-label={isBookmarked ? "Remove bookmark" : "Bookmark question"}
+            className="absolute right-[-80px] top-[38px] flex h-[42px] w-[42px] items-center justify-center rounded-full bg-white shadow-[0_4px_14px_rgba(0,0,0,0.08)] transition-shadow hover:shadow-[0_6px_20px_rgba(0,0,0,0.12)] max-lg:hidden"
+          >
+            <Heart
+              className={`h-5 w-5 transition-colors ${
+                isBookmarked
+                  ? "fill-brand text-brand"
+                  : "text-gray-800"
+              }`}
+            />
+          </button>
 
-        <div className="mx-auto w-full max-w-[760px]">
+          {/* Mobile bookmark */}
+          <button
+            onClick={handleToggleBookmark}
+            aria-label={isBookmarked ? "Remove bookmark" : "Bookmark question"}
+            className="absolute right-6 top-6 flex h-[42px] w-[42px] items-center justify-center rounded-full bg-white shadow-[0_4px_14px_rgba(0,0,0,0.08)] lg:hidden"
+          >
+            <Heart
+              className={`h-5 w-5 transition-colors ${
+                isBookmarked
+                  ? "fill-brand text-brand"
+                  : "text-gray-800"
+              }`}
+            />
+          </button>
+
           <QuestionRenderer
             question={currentQuestion}
             selectedAnswer={selectedAnswer}
@@ -148,11 +163,11 @@ export default function QuizAttemptPage({ params }: QuizAttemptPageProps) {
 
           {/* Actions */}
           {!isSubmitted && (
-            <div className="mt-14 flex items-center gap-4">
+            <div className="mt-12 flex items-center gap-4">
               <button
                 onClick={handleSkip}
                 disabled={currentIndex >= quiz.questions.length - 1}
-                className="min-w-[140px] rounded-full bg-[#F1F1F1] px-8 py-4 text-[16px] font-medium text-gray-600 transition-colors hover:bg-[#E5E5E5] disabled:cursor-not-allowed disabled:opacity-40"
+                className="h-[46px] min-w-[100px] rounded-full bg-[#F1F1F1] px-8 text-[14px] font-medium text-[#4B5563] transition-colors hover:bg-[#E5E5E5] disabled:cursor-not-allowed disabled:opacity-40"
               >
                 Skip
               </button>
@@ -160,14 +175,14 @@ export default function QuizAttemptPage({ params }: QuizAttemptPageProps) {
               {currentIndex === quiz.questions.length - 1 ? (
                 <button
                   onClick={handleSubmit}
-                  className="min-w-[140px] rounded-full bg-[#F5A000] px-8 py-4 text-[16px] font-semibold text-white transition-colors hover:bg-[#E09000]"
+                  className="h-[46px] min-w-[100px] rounded-full bg-[#F59E0B] px-8 text-[14px] font-medium text-white transition-colors hover:bg-[#D97706]"
                 >
                   Submit Quiz
                 </button>
               ) : (
                 <button
                   onClick={handleNext}
-                  className="min-w-[140px] rounded-full bg-[#F5A000] px-8 py-4 text-[16px] font-semibold text-white transition-colors hover:bg-[#E09000]"
+                  className="h-[46px] min-w-[100px] rounded-full bg-[#F59E0B] px-8 text-[14px] font-medium text-white transition-colors hover:bg-[#D97706]"
                 >
                   Next
                 </button>
@@ -177,7 +192,7 @@ export default function QuizAttemptPage({ params }: QuizAttemptPageProps) {
 
           {/* Submission Result */}
           {isSubmitted && (
-            <div className="mt-14 rounded-2xl bg-[#F8F8FF] p-8 text-center">
+            <div className="mt-12 rounded-2xl bg-[#F8F8FF] p-8 text-center">
               <h2 className="mb-2 text-lg font-bold text-gray-900">
                 Quiz Submitted!
               </h2>
@@ -207,23 +222,23 @@ export default function QuizAttemptPage({ params }: QuizAttemptPageProps) {
               </div>
             </div>
           )}
+        </main>
 
-          {/* Pagination */}
-          <div className="mt-12 border-t border-gray-100 pt-6">
-            <QuizPagination
-              totalQuestions={quiz.questions.length}
-              currentQuestionIndex={currentIndex}
-              questionIds={quiz.questions.map((q) => q.id)}
-              answeredQuestionIds={Object.keys(selectedAnswers)}
-              expiredQuestionIds={Array.from(expiredQuestions)}
-              visiblePageCount={15}
-              onQuestionChange={setCurrentIndex}
-              onPrevious={handlePrev}
-              onNext={handleNext}
-            />
-          </div>
+        {/* Pagination Footer */}
+        <div className="border-t border-[#DDE1FF] px-8 py-[26px] text-center">
+          <QuizPagination
+            totalQuestions={quiz.questions.length}
+            currentQuestionIndex={currentIndex}
+            questionIds={quiz.questions.map((q) => q.id)}
+            answeredQuestionIds={Object.keys(selectedAnswers)}
+            expiredQuestionIds={Array.from(expiredQuestions)}
+            visiblePageCount={15}
+            onQuestionChange={setCurrentIndex}
+            onPrevious={handlePrev}
+            onNext={handleNext}
+          />
         </div>
-      </main>
+      </div>
     </div>
   );
 }

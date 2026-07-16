@@ -47,22 +47,22 @@ export function QuizTimer({ duration, onTimeUp, isLocked }: QuizTimerProps) {
     <div className="flex items-center gap-2">
       {units.map((unit, i) => (
         <div key={unit.label} className="flex items-center gap-2">
-          <div className="min-w-[60px] rounded-lg bg-[#F8F8FF] px-3 py-2 text-center sm:min-w-[74px] sm:px-4 sm:py-3">
+          <div className="flex h-[54px] w-[54px] flex-col items-center justify-center rounded-[6px] bg-[#F8F8FF]">
             <p
-              className={`text-xl font-bold sm:text-2xl ${
-                isLow ? "text-red-500" : "text-brand-link"
+              className={`font-poppins text-[18px] font-medium leading-none ${
+                isLow ? "text-red-500" : "text-[#2945FF]"
               }`}
             >
               {String(unit.value).padStart(2, "0")}
             </p>
-            <p className="mt-0.5 text-[10px] font-medium text-gray-400 sm:text-[11px]">
+            <p className="mt-1 text-[9px] text-[#9CA3AF]">
               {unit.label}
             </p>
           </div>
           {i < units.length - 1 && (
             <span
-              className={`text-lg font-bold ${
-                isLow ? "text-red-500" : "text-brand-link"
+              className={`text-[16px] font-semibold ${
+                isLow ? "text-red-500" : "text-[#2945FF]"
               }`}
             >
               :

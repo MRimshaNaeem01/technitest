@@ -70,20 +70,20 @@ export function QuizPagination({
   );
 
   return (
-    <div className="mt-10">
-      <div className="flex items-center gap-1 overflow-x-auto pb-2 sm:justify-center">
+    <div>
+      <div className="flex items-center justify-center gap-[6px] overflow-x-auto">
         <button
           onClick={onPrevious}
           disabled={currentQuestionIndex <= 0}
           aria-label="Previous question"
           className={cn(
-            "flex size-9 shrink-0 items-center justify-center rounded-lg text-white transition-colors",
+            "flex h-[28px] w-[28px] shrink-0 items-center justify-center rounded-[3px] text-white transition-colors",
             currentQuestionIndex <= 0
               ? "cursor-not-allowed bg-gray-300"
-              : "bg-gray-900 hover:bg-gray-700"
+              : "bg-black hover:bg-gray-800"
           )}
         >
-          <ChevronLeft className="size-4" />
+          <ChevronLeft className="h-3.5 w-3.5" />
         </button>
 
         {visibleQuestions.map((idx) => {
@@ -93,11 +93,11 @@ export function QuizPagination({
           const isSkipped = skippedSet.has(questionId);
           const isExpired = expiredSet.has(questionId);
 
-          let bgClass = "bg-[#F0F0FF] text-gray-700";
+          let bgClass = "bg-[#F1F2FB] text-[#111827] hover:bg-[#E0E0FF]";
           if (isCurrent) {
-            bgClass = "bg-brand-link text-white";
+            bgClass = "bg-[#2945FF] text-white";
           } else if (isAnswered) {
-            bgClass = "bg-brand-link/10 text-brand-link";
+            bgClass = "bg-[#2945FF]/10 text-[#2945FF]";
           } else if (isSkipped) {
             bgClass = "bg-[#FFF3E0] text-[#E67E22]";
           } else if (isExpired) {
@@ -111,7 +111,7 @@ export function QuizPagination({
               aria-label={`Go to question ${idx + 1}`}
               aria-current={isCurrent ? "true" : undefined}
               className={cn(
-                "flex size-9 shrink-0 items-center justify-center rounded-lg text-xs font-semibold transition-colors",
+                "flex h-[26px] min-w-[26px] shrink-0 items-center justify-center rounded-[2px] px-2 text-[10px] font-medium transition-colors",
                 bgClass
               )}
             >
@@ -125,17 +125,17 @@ export function QuizPagination({
           disabled={currentQuestionIndex >= totalQuestions - 1}
           aria-label="Next question"
           className={cn(
-            "flex size-9 shrink-0 items-center justify-center rounded-lg text-white transition-colors",
+            "flex h-[28px] w-[28px] shrink-0 items-center justify-center rounded-[3px] text-white transition-colors",
             currentQuestionIndex >= totalQuestions - 1
               ? "cursor-not-allowed bg-gray-300"
-              : "bg-gray-900 hover:bg-gray-700"
+              : "bg-black hover:bg-gray-800"
           )}
         >
-          <ChevronRight className="size-4" />
+          <ChevronRight className="h-3.5 w-3.5" />
         </button>
       </div>
 
-      <p className="mt-4 text-center text-sm text-gray-500">
+      <p className="mt-4 font-poppins text-[12px] italic text-[#111111]">
         Attempted Question {attemptedCount} out of {totalQuestions}
       </p>
     </div>
