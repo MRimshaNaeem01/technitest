@@ -1,26 +1,18 @@
-type CategoryInnerHeroProps = {
-  breadcrumb: React.ReactNode;
-  title: string;
-  description?: string;
-};
+import { BannerBreadcrumb } from "@/components/common/BannerBreadcrumb";
 
-export function CategoryInnerHero({
-  breadcrumb,
-  title,
-  description,
-}: CategoryInnerHeroProps) {
+export function VerificationBanner() {
   return (
-    <section className="relative flex min-h-[260px] items-center justify-center overflow-hidden bg-[#F7F7FF]">
+    <section className="relative flex min-h-[280px] items-center justify-center overflow-hidden bg-[#F7F7FF]">
       <div className="py-14 text-center">
-        <div className="mb-4">{breadcrumb}</div>
+        <div className="mb-4">
+          <BannerBreadcrumb currentPage="Verify Certificate" />
+        </div>
         <h1 className="type-page text-[36px] md:text-[48px]">
-          {title}
+          Securely Verify Your Credentials.
         </h1>
-        {description && (
-          <p className="mx-auto mt-4 max-w-[620px] type-body">
-            {description}
-          </p>
-        )}
+        <p className="mx-auto mt-4 max-w-[620px] type-body">
+          Make sure your achievement is authentic and recognized.
+        </p>
       </div>
 
       <div className="pointer-events-none absolute inset-0 overflow-hidden">

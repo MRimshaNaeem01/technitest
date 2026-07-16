@@ -1,5 +1,4 @@
-import Link from "next/link";
-import { ChevronRight, Home } from "lucide-react";
+import { BannerBreadcrumb } from "@/components/common/BannerBreadcrumb";
 
 type BlogHeroProps = {
   title: string;
@@ -14,14 +13,9 @@ export function BlogHero({ title }: BlogHeroProps) {
       <div className="pointer-events-none absolute right-[15%] bottom-12 hidden h-8 w-8 rounded bg-brand/20 md:block" />
 
       <div className="relative mx-auto max-w-3xl text-center">
-        <nav className="mb-5 flex items-center justify-center gap-1 text-sm" aria-label="Breadcrumb">
-          <Link href="/" className="flex items-center gap-1 text-muted-foreground transition-colors hover:text-foreground">
-            <Home className="h-4 w-4" />
-            Home
-          </Link>
-          <ChevronRight className="h-3.5 w-3.5 text-muted-foreground" />
-          <span className="text-muted-foreground">Blogs</span>
-        </nav>
+        <div className="mb-5">
+          <BannerBreadcrumb currentPage="Blogs" />
+        </div>
 
         <h1 className="type-page text-[28px] md:text-[38px] lg:text-[42px]">
           {title}

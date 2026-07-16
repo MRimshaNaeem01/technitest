@@ -1,3 +1,4 @@
+import { BannerBreadcrumb } from "@/components/common/BannerBreadcrumb";
 import { Container } from "@/components/common/container";
 import { FaqHero } from "@/components/faqComponents/faq-hero";
 import { FaqSidebar } from "@/components/faqComponents/faq-sidebar";
@@ -58,12 +59,7 @@ export default function FaqsPage() {
   return (
     <>
       <FaqHero
-        breadcrumb={
-          <>
-            Home <span className="mx-1">›</span>{" "}
-            <span className="text-black">Frequently Asked Questions</span>
-          </>
-        }
+        breadcrumb={<BannerBreadcrumb currentPage="Frequently Asked Questions" />}
         title="Frequently Asked Questions"
         description="Find quick answers to the most common questions about our courses, certificates, and platform."
       />

@@ -22,10 +22,10 @@ export function LearningCategories({
   viewAllHref = "/categories",
 }: LearningCategoriesProps) {
   return (
-    <section className="py-16">
+    <section className="p-16">
       <div className="mb-10 text-center">
         <p className="mb-2 text-sm font-medium text-brand">{eyebrow}</p>
-        <h2 className="type-section">
+        <h2 className="type-section font-medium">
           {title}
         </h2>
       </div>

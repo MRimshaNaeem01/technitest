@@ -8,7 +8,7 @@ export function FaqHero({ breadcrumb, title, description }: FaqHeroProps) {
   return (
     <section className="relative flex min-h-[280px] items-center justify-center overflow-hidden bg-[#F7F7FF]">
       <div className="py-14 text-center">
-        <p className="mb-4 text-sm text-gray-500">{breadcrumb}</p>
+        <div className="mb-4">{breadcrumb}</div>
         <h1 className="type-page text-[36px] md:text-[48px]">
           {title}
         </h1>

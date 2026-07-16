@@ -15,7 +15,7 @@ export function AboutHero({
     <section className="relative flex min-h-[330px] items-center justify-center overflow-hidden bg-[#F5F5FF]">
       <div className="py-16 text-center">
         {breadcrumb && (
-          <p className="mb-6 text-sm text-gray-500">{breadcrumb}</p>
+          <div className="mb-6">{breadcrumb}</div>
         )}
         {eyebrow && !breadcrumb && (
           <p className="mb-4 text-sm font-medium text-brand">{eyebrow}</p>

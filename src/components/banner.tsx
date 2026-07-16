@@ -14,7 +14,7 @@ type BannerProps = {
 };
 
 export function Banner({
-  badge = "🏆 The Leader in Online Learning",
+  badge = " The Leader in Online Learning",
   title,
   highlightedText,
   description,
@@ -35,36 +35,81 @@ export function Banner({
           {/* Left Content */}
           <div className={hasImage ? "max-w-xl" : "max-w-3xl"}>
             {badge && (
-              <div className="mb-6 inline-flex items-center bg-white px-5 py-2 text-sm font-medium shadow-sm">
-                {badge}
-              </div>
+            <div className="relative inline-flex items-center justify-center mb-4">
+            <div className="absolute -left-5 top-1/2 h-11 w-8 -translate-y-1/2 bg-[#EEF0FF] rounded-xl [clip-path:polygon(0_0,100%_0,72%_50%,100%_100%,0_100%,28%_50%)]" />
+          
+            <div className="relative z-10 flex h-[62px] items-center gap-3 bg-white px-10 shadow-[0_12px_35px_rgba(31,41,55,0.08)]">
+              <span className="text-[28px] leading-none">🏆</span>
+          
+              <span className="font-poppins whitespace-nowrap text-[18px] font-normal leading-none text-black">
+               {badge}
+              </span>
+            </div>
+          
+            <div className="absolute -right-5 top-1/2 h-11 w-8 -translate-y-1/2 bg-[#EEF0FF] [clip-path:polygon(0_0,100%_0,72%_50%,100%_100%,0_100%,28%_50%)] rotate-180" />
+          </div>
             )}
 
-<h1 className="max-w-[700px] font-urbanist text-[50px] font-medium leading-[62px] tracking-normal text-[#0F172A]">
-  {title}{" "}
-  {highlightedText && (
-    <span className="font-semibold text-[#2945FF]">
-      {highlightedText}
-    </span>
-  )}
-</h1>
+            <h1 className="max-w-[700px] font-urbanist text-[50px] font-medium leading-[62px] tracking-normal text-[#0F172A]">
+              {title}{" "}
+              {highlightedText && (
+                <span className="font-semibold text-[#2945FF]">
+                  {highlightedText}
+                </span>
+              )}
+            </h1>
 
-{description && (
-  <p className="mt-6 max-w-[620px] font-poppins text-[24px] font-normal leading-[36px] tracking-normal text-[#3F3F46]">
-    {description}
-  </p>
-)}
+            {description && (
+              <p className="mt-6 max-w-[620px] font-poppins text-[20px] font-normal leading-[36px] tracking-normal text-[#3F3F46]">
+                {description}
+              </p>
+            )}
 
             {buttonText && (
               <div className="mt-7 flex items-center gap-5">
-                <AppButton href={buttonHref} className="rounded-full px-7">
+                <AppButton
+                  href={buttonHref}
+                  className="h-14 rounded-full bg-[#2F43F4] px-8 font-poppins text-lg font-medium text-white shadow-md transition-all hover:bg-[#2538CC] hover:shadow-lg"
+                >
                   {buttonText}
                 </AppButton>
 
                 {hasImage && (
-                  <p className="text-sm font-medium text-black">
-                    <span className="font-bold">24k+</span> Happy Students
-                  </p>
+                  <div className="flex items-center">
+                    <div className="flex items-center">
+                      <div className="relative h-12 w-12 overflow-hidden rounded-full border-[3px] border-white shadow-sm">
+                        <Image
+                          src="/user1.png"
+                          alt="User 1"
+                          fill
+                          className="object-cover"
+                          sizes="48px"
+                        />
+                      </div>
+                      <div className="relative -ml-4 h-12 w-12 overflow-hidden rounded-full border-[3px] border-white shadow-sm">
+                        <Image
+                          src="/user2.png"
+                          alt="User 2"
+                          fill
+                          className="object-cover"
+                          sizes="48px"
+                        />
+                      </div>
+                      <div className="relative -ml-4 h-12 w-12 overflow-hidden rounded-full border-[3px] border-white shadow-sm">
+                        <Image
+                          src="/user3.png"
+                          alt="User 3"
+                          fill
+                          className="object-cover"
+                          sizes="48px"
+                        />
+                      </div>
+                    </div>
+                    <p className="ml-3 whitespace-nowrap font-poppins text-sm text-[#111827]">
+                      <span className="font-bold">24k+</span>{" "}
+                      <span className="font-medium">Happy Students</span>
+                    </p>
+                  </div>
                 )}
               </div>
             )}

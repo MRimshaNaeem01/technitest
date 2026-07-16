@@ -1,11 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
-import { ChevronRight, ChevronLeft, Home } from "lucide-react";
+import { ChevronRight, ChevronLeft } from "lucide-react";
 
 import { Container } from "@/components/common/container";
 import { BlogCard } from "@/components/blogs/blog-card";
+import { BannerBreadcrumb } from "@/components/common/BannerBreadcrumb";
 import { cn } from "@/lib/utils";
 
 const BLOG_POSTS = [
@@ -80,14 +80,9 @@ export default function BlogsPage() {
 
         <div className="relative mx-auto max-w-3xl text-center">
           {/* Breadcrumb */}
-          <nav className="mb-6 flex items-center justify-center gap-1 text-sm" aria-label="Breadcrumb">
-            <Link href="/" className="flex items-center gap-1 text-muted-foreground transition-colors hover:text-foreground">
-              <Home className="h-4 w-4" />
-              Home
-            </Link>
-            <ChevronRight className="h-3.5 w-3.5 text-muted-foreground" />
-            <span className="font-medium text-foreground">Blogs</span>
-          </nav>
+          <div className="mb-6 flex justify-center">
+            <BannerBreadcrumb currentPage="Blogs" />
+          </div>
 
           <h1 className="text-3xl font-bold leading-tight text-[#111] md:text-4xl lg:text-5xl">
             Latest Insights, Tips & Guides

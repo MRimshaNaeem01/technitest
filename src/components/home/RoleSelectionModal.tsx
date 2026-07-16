@@ -71,7 +71,7 @@ export function RoleSelectionModal({
 
         <h2
           id="role-selection-title"
-          className="mb-2 text-center text-xl font-bold text-[#07104F]"
+          className="mb-2 text-center text-xl font-medium  text-[#07104F]"
         >
           Select Your Role to Personalize
           <br />

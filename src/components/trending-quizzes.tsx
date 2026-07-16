@@ -37,7 +37,7 @@ export function TrendingQuizzes({
           {eyebrow && (
             <p className="mb-2 text-sm font-medium text-brand">{eyebrow}</p>
           )}
-          <h2 className="type-section">
+          <h2 className="type-section font-medium">
             {title}
           </h2>
         </div>

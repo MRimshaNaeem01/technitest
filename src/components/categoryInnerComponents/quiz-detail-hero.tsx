@@ -16,7 +16,7 @@ export function QuizDetailHero({
   return (
     <section className="bg-white pt-8">
       <Container>
-        <p className="mb-6 text-sm text-gray-500">{breadcrumb}</p>
+        <div className="mb-6">{breadcrumb}</div>
         <div className="overflow-hidden rounded-xl">
           <Image
             src={imageSrc}

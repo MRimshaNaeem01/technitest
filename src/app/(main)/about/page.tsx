@@ -1,3 +1,4 @@
+import { BannerBreadcrumb } from "@/components/common/BannerBreadcrumb";
 import { AboutHero } from "@/components/AboutUsComponents/about-hero";
 import { AboutIntro } from "@/components/AboutUsComponents/about-intro";
 import { AboutJourney } from "@/components/AboutUsComponents/about-journey";
@@ -117,12 +118,7 @@ export default function AboutPage() {
   return (
     <>
       <AboutHero
-        breadcrumb={
-          <>
-            Home <span className="mx-1">›</span>{" "}
-            <span className="text-black">About Us</span>
-          </>
-        }
+        breadcrumb={<BannerBreadcrumb currentPage="About Us" />}
         title="Empowering You Through Knowledge."
         description="We are dedicated to providing high-quality, skill-based quizzes that help learners grow, earn certificates, and achieve their goals."
       />

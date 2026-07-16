@@ -1,3 +1,4 @@
+import { BannerBreadcrumb } from "@/components/common/BannerBreadcrumb";
 import { Container } from "@/components/common/container";
 import { CategoryInnerHero } from "@/components/categoryInnerComponents/category-inner-hero";
 import { CategoryFilterSidebar } from "@/components/categoryInnerComponents/category-filter-sidebar";
@@ -78,13 +79,7 @@ export default async function CategoryPage({
   return (
     <>
       <CategoryInnerHero
-        breadcrumb={
-          <>
-            Home <span className="mx-1">›</span> Categories{" "}
-            <span className="mx-1">›</span>{" "}
-            <span className="text-black">{label}</span>
-          </>
-        }
+        breadcrumb={<BannerBreadcrumb currentPage={label} />}
         title={`${label} Quizzes`}
         description={`Browse our collection of ${label.toLowerCase()} quizzes designed to test and improve your knowledge.`}
       />

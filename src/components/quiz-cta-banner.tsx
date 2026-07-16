@@ -33,7 +33,7 @@ export default function QuizCtaBanner({
         <Container>
           <div className="flex flex-col items-center text-center lg:flex-row lg:text-left">
             <div className="flex flex-1 flex-col items-center py-6 lg:items-start lg:py-16">
-              <h2 className="max-w-[620px] type-hero text-center text-[36px] md:text-[52px] lg:text-left">
+              <h2 className="max-w-[650px] type-hero text-center text-[32px] font-medium md:text-[42px] lg:text-left">
                 {title}
               </h2>
               {description && (

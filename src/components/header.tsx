@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { Bell, ExternalLink, ShoppingBag } from "lucide-react";
@@ -6,8 +8,12 @@ import { AppButton } from "@/components/common/app-button";
 import { Container } from "@/components/common/container";
 import { NavLink } from "@/components/common/nav-link";
 import { mainNavLinks } from "@/config/site";
+import { useCartStore } from "@/store/cart";
 
 export function Header() {
+  const openDrawer = useCartStore((s) => s.openDrawer);
+  const itemCount = useCartStore((s) => s.items.length);
+
   return (
     <header className="sticky top-0 z-50 bg-white">
       <Container>
@@ -47,11 +53,14 @@ export function Header() {
               type="button"
               aria-label="Shopping cart"
               className="relative"
+              onClick={openDrawer}
             >
               <ShoppingBag className="size-5 stroke-[1.7]" />
-              <span className="absolute -right-1.5 -top-1.5 flex size-4 items-center justify-center rounded-full bg-brand text-[10px] font-bold text-white">
-                0
-              </span>
+              {itemCount > 0 && (
+                <span className="absolute -right-1.5 -top-1.5 flex size-4 items-center justify-center rounded-full bg-brand text-[10px] font-bold text-white">
+                  {itemCount}
+                </span>
+              )}
             </button>
 
             <button

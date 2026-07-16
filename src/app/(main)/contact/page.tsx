@@ -1,3 +1,4 @@
+import { BannerBreadcrumb } from "@/components/common/BannerBreadcrumb";
 import { ContactHero } from "@/components/contactComponents/contact-hero";
 import { ContactInfoCards } from "@/components/contactComponents/contact-info-cards";
 import { ContactForm } from "@/components/contactComponents/contact-form";
@@ -24,12 +25,7 @@ export default function ContactPage() {
   return (
     <>
       <ContactHero
-        breadcrumb={
-          <>
-            Home <span className="mx-1">›</span>{" "}
-            <span className="text-black">Contact Us</span>
-          </>
-        }
+        breadcrumb={<BannerBreadcrumb currentPage="Contact Us" />}
         title="Get in Touch with Us"
         description="Have questions about our quizzes, certification, or anything else? We're here to help."
       />

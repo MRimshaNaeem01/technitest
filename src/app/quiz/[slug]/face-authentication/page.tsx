@@ -2,6 +2,7 @@
 
 import { use } from "react";
 import { useRouter } from "next/navigation";
+import { ArrowLeft } from "lucide-react";
 import { FaceAuthenticationCamera } from "@/components/quiz/FaceAuthenticationCamera";
 
 type FaceAuthPageProps = {
@@ -18,15 +19,22 @@ export default function FaceAuthenticationPage({ params }: FaceAuthPageProps) {
   };
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-[#ECECFF] px-4 py-12">
-      <h1 className="mb-2 text-2xl font-bold text-gray-900 sm:text-3xl">
-        Face Authentication
-      </h1>
-      <p className="mb-10 text-sm text-gray-500">
-        Verify your identity to start the quiz
-      </p>
+    <main className="flex min-h-screen items-center justify-center bg-gradient-to-br from-[#ECECFF] to-[#F5F5FF] px-4 py-12">
+      <div className="relative w-full rounded-3xl bg-white p-10 pb-12 mx-10 shadow-[0_8px_40px_rgba(0,0,0,0.08)] sm:p-12">
+        <button
+          onClick={() => router.back()}
+          aria-label="Go back"
+          className="absolute left-6 top-6 flex size-8 items-center justify-center rounded-full text-[#111827] transition-colors hover:bg-gray-100"
+        >
+          <ArrowLeft className="size-8" />
+        </button>
 
-      <FaceAuthenticationCamera onVerified={handleVerified} />
+        <h1 className="mb-2 text-center font-urbanist text-[48px] font-bold leading-tight text-[#111827]">
+          Face Authentication
+        </h1>
+
+        <FaceAuthenticationCamera onVerified={handleVerified} />
+      </div>
     </main>
   );
 }

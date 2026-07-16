@@ -79,14 +79,19 @@ export function FaceAuthenticationCamera({
   };
 
   return (
-    <div className="flex flex-col items-center">
-      <div className="relative mb-6 h-[300px] w-[300px] overflow-hidden rounded-2xl bg-gray-900 sm:h-[380px] sm:w-[380px]">
+    <div className="mt-8 flex flex-col items-center">
+      {/* Camera Preview */}
+      <div className="relative mb-8 h-[320px] w-full max-w-[540px] overflow-hidden rounded-xl bg-gray-900 sm:h-[420px]">
+        {/* Scanning Corner Brackets */}
         <div className="pointer-events-none absolute inset-0 z-10">
-          <span className="absolute left-0 top-0 h-12 w-12 border-l-4 border-t-4 border-blue-500" />
-          <span className="absolute right-0 top-0 h-12 w-12 border-r-4 border-t-4 border-blue-500" />
-          <span className="absolute bottom-0 left-0 h-12 w-12 border-b-4 border-l-4 border-blue-500" />
-          <span className="absolute bottom-0 right-0 h-12 w-12 border-b-4 border-r-4 border-blue-500" />
+          <span className="absolute left-0 top-0 h-14 w-14 border-l-[3px] border-t-[3px] border-blue-500" />
+          <span className="absolute right-0 top-0 h-14 w-14 border-r-[3px] border-t-[3px] border-blue-500" />
+          <span className="absolute bottom-0 left-0 h-14 w-14 border-b-[3px] border-l-[3px] border-blue-500" />
+          <span className="absolute bottom-0 right-0 h-14 w-14 border-b-[3px] border-r-[3px] border-blue-500" />
         </div>
+
+        {/* Scanning Line Animation */}
+        <div className="pointer-events-none absolute inset-x-0 top-0 z-20 h-[2px] animate-[scan_2s_linear_infinite] bg-gradient-to-r from-transparent via-blue-500 to-transparent" />
 
         {hasCamera && !permissionDenied ? (
           <video
@@ -99,7 +104,7 @@ export function FaceAuthenticationCamera({
         ) : (
           <div className="flex h-full flex-col items-center justify-center gap-3 text-white/70">
             <VideoOff className="size-12" />
-            <p className="text-center text-sm">
+            <p className="max-w-[280px] text-center text-sm">
               {permissionDenied
                 ? "Camera permission denied. Please allow camera access in your browser settings."
                 : "No camera detected. Please connect a camera device."}
@@ -108,26 +113,30 @@ export function FaceAuthenticationCamera({
         )}
       </div>
 
-      <p className="mb-8 max-w-xs text-center text-sm text-gray-500">
+      {/* Instruction Text */}
+      <p className="mb-10 max-w-lg text-center font-poppins text-[24px] font-normal leading-relaxed text-gray-500">
         Turn your head slowly in all direction for face verification
       </p>
 
-      <div className="flex items-center gap-5">
+      {/* Action Buttons */}
+      <div className="flex items-center gap-10">
+        {/* Camera Switch */}
         <button
           onClick={handleSwitchCamera}
           aria-label="Switch camera"
-          className="flex size-12 items-center justify-center rounded-full bg-gray-100 text-gray-600 transition-colors hover:bg-gray-200"
+          className="flex size-[72px] items-center justify-center rounded-full bg-[#F3F4F6] text-gray-600 transition-colors hover:bg-gray-200"
         >
-          <SwitchCamera className="size-5" />
+          <SwitchCamera className="size-8" />
         </button>
 
+        {/* Confirm / Verify */}
         <button
           onClick={handleConfirm}
           aria-label="Confirm face verification"
-          className="flex size-16 items-center justify-center rounded-full bg-brand text-white shadow-lg transition-colors hover:bg-brand-hover"
+          className="flex size-[78px] items-center justify-center rounded-full bg-[#F59E0B] text-white shadow-[0_4px_20px_rgba(245,158,11,0.35)] transition-colors hover:bg-[#D97706]"
         >
           <svg
-            className="size-7"
+            className="size-9"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
@@ -139,23 +148,31 @@ export function FaceAuthenticationCamera({
           </svg>
         </button>
 
+        {/* Flash Toggle */}
         <button
           onClick={handleToggleTorch}
           aria-label="Toggle flash"
           disabled={!torchSupported}
-          className={`flex size-12 items-center justify-center rounded-full transition-colors ${
+          className={`flex size-[72px] items-center justify-center rounded-full transition-colors ${
             torchSupported
-              ? "bg-gray-100 text-gray-600 hover:bg-gray-200"
+              ? "bg-[#F3F4F6] text-gray-600 hover:bg-gray-200"
               : "cursor-not-allowed bg-gray-50 text-gray-300"
           }`}
         >
           {torchOn ? (
-            <Zap className="size-5" />
+            <Zap className="size-8" />
           ) : (
-            <ZapOff className="size-5" />
+            <ZapOff className="size-8" />
           )}
         </button>
       </div>
+
+      <style>{`
+        @keyframes scan {
+          0% { transform: translateY(0); }
+          100% { transform: translateY(420px); }
+        }
+      `}</style>
     </div>
   );
 }

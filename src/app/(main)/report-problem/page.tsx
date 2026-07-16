@@ -1,3 +1,4 @@
+import { BannerBreadcrumb } from "@/components/common/BannerBreadcrumb";
 import { ReportProblemForm } from "@/components/reportProblemComponents/report-problem-form";
 
 export default function ReportProblemPage() {
@@ -5,10 +6,9 @@ export default function ReportProblemPage() {
     <>
       <section className="relative flex min-h-[280px] items-center justify-center overflow-hidden bg-[#F7F7FF]">
         <div className="py-14 text-center">
-          <p className="mb-4 text-sm text-gray-500">
-            Home <span className="mx-1">›</span>{" "}
-            <span className="text-black">Report a Problem</span>
-          </p>
+          <div className="mb-4">
+            <BannerBreadcrumb currentPage="Report a Problem" />
+          </div>
           <h1 className="text-[34px] font-semibold leading-tight text-black">
             Report a Problem
           </h1>

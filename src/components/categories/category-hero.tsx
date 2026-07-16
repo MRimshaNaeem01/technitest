@@ -1,3 +1,5 @@
+import { BannerBreadcrumb } from "@/components/common/BannerBreadcrumb";
+
 type CategoryHeroProps = {
   title: string;
   description?: string;
@@ -7,11 +9,10 @@ export function CategoryHero({ title, description }: CategoryHeroProps) {
   return (
     <section className="relative flex min-h-[280px] items-center justify-center overflow-hidden bg-[#F7F7FF]">
       <div className="py-14 text-center">
-        <p className="mb-4 text-sm text-gray-500">
-          Home <span className="mx-1">›</span>{" "}
-          <span className="text-black">Categories</span>
-        </p>
-        <h1 className="type-page text-[36px] md:text-[48px]">
+        <div className="mb-4">
+          <BannerBreadcrumb currentPage="Categories" />
+        </div>
+        <h1 className="type-page text-[36px] md:text-[48px] font-medium">
           {title}
         </h1>
         {description && (

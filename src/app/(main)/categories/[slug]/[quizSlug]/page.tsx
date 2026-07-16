@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { BarChart3, CircleHelp, Clock3, Heart, Star } from "lucide-react";
 
+import { BannerBreadcrumb } from "@/components/common/BannerBreadcrumb";
 import { Container } from "@/components/common/container";
 import { QuizDetailHero } from "@/components/categoryInnerComponents/quiz-detail-hero";
 import { QuizInfoCard } from "@/components/categoryInnerComponents/quiz-info-card";
@@ -104,14 +105,7 @@ export default function QuizDetailPage() {
   return (
     <>
       <QuizDetailHero
-        breadcrumb={
-          <>
-            Home <span className="mx-1">›</span> Categories{" "}
-            <span className="mx-1">›</span> Health & Wellness{" "}
-            <span className="mx-1">›</span>{" "}
-            <span className="text-black">Advanced Marketing Quiz</span>
-          </>
-        }
+        breadcrumb={<BannerBreadcrumb currentPage="Advanced Marketing Quiz" />}
         imageSrc="/trendingQuiz/quiz1.png"
       />
       <QuizInfoCard

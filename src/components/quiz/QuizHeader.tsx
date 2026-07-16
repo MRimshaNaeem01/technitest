@@ -29,7 +29,7 @@ export function QuizHeader({
   isTimerLocked,
 }: QuizHeaderProps) {
   return (
-    <header className="grid grid-cols-[1fr_1.4fr_1fr] items-center border-b border-[#ECECF5] px-8 py-6 lg:px-14">
+    <header className="grid  grid-cols-[1fr_1.4fr_1fr] items-center border-b border-[#ECECF5] px-8 py-6 lg:px-14">
       {/* Left — Quiz Name */}
       <div className="min-w-0">
         <p className="mb-1 text-sm font-medium text-brand-link">Quiz Name</p>
