@@ -29,9 +29,8 @@ export function Banner({
     <section className="py-10">
       <Container>
         <div
-          className={`grid items-center gap-10 ${
-            hasImage ? "lg:grid-cols-2" : "place-items-center text-center"
-          }`}
+          className={`grid items-center gap-10 ${hasImage ? "lg:grid-cols-2" : "place-items-center text-center"
+            }`}
         >
           {/* Left Content */}
           <div className={hasImage ? "max-w-xl" : "max-w-3xl"}>
@@ -41,20 +40,20 @@ export function Banner({
               </div>
             )}
 
-            <h1 className="type-hero text-[36px] md:text-[52px]">
-              {title}{" "}
-              {highlightedText && (
-                <span className="relative text-[#2945FF]">
-                  {highlightedText}
-                </span>
-              )}
-            </h1>
+<h1 className="max-w-[700px] font-urbanist text-[50px] font-medium leading-[62px] tracking-normal text-[#0F172A]">
+  {title}{" "}
+  {highlightedText && (
+    <span className="font-semibold text-[#2945FF]">
+      {highlightedText}
+    </span>
+  )}
+</h1>
 
-            {description && (
-              <p className="mt-5 max-w-lg type-body">
-                {description}
-              </p>
-            )}
+{description && (
+  <p className="mt-6 max-w-[620px] font-poppins text-[24px] font-normal leading-[36px] tracking-normal text-[#3F3F46]">
+    {description}
+  </p>
+)}
 
             {buttonText && (
               <div className="mt-7 flex items-center gap-5">
@@ -80,18 +79,69 @@ export function Banner({
                 width={540}
                 height={520}
                 priority
-                className="h-auto w-full max-w-[540px] object-contain"
+                className="h-auto w-full z-0 max-w-[540px] object-contain"
               />
 
-              <div className="absolute left-0 top-28 rounded-xl bg-white/90 px-5 py-4 shadow-md">
-                <p className="text-2xl font-semibold">⭐ 99%</p>
-                <p className="text-xs text-gray-600">Satisfied Students</p>
+              <div className="absolute left-0 top-40">
+                <div
+                  className="
+      flex items-center gap-4
+      rounded-xl
+      border-[1.5px] border-white
+  bg-[#F3F4F6]
+      px-5 py-4
+      shadow-sm
+      backdrop-blur-[13px]
+            opacity-80
+
+    "
+                >
+                  <div className="flex h-[72px] w-12 shrink-0 items-center justify-center">
+                    <span className="text-6xl leading-none">⭐</span>
+                  </div>
+
+                  <div>
+                    <h3 className="text-xl font-bold leading-none text-gray-900">
+                      99%
+                    </h3>
+
+                    <p className="mt-1 whitespace-nowrap text-sm font-medium text-gray-600">
+                      Satisfied Students
+                    </p>
+                  </div>
+                </div>
               </div>
 
-              <div className="absolute bottom-28 right-0 rounded-xl bg-white/90 px-5 py-4 shadow-md">
-                <p className="text-2xl font-semibold">🎓 36k+</p>
-                <p className="text-xs text-gray-600">Enrolled Students</p>
+              <div className="absolute bottom-28 -right-18">
+                <div
+                  className="
+      flex items-center gap-4
+      rounded-xl
+      border-[1.5px] border-white
+      bg-[#F3F4F6]
+      px-5 py-4
+      shadow-sm
+      backdrop-blur-[30px]
+      opacity-80
+    "
+                >
+                  <div className="flex h-[72px] w-12 shrink-0 items-center justify-center">
+                    <span className="text-6xl leading-none">🎓</span>
+                  </div>
+
+                  <div>
+                    <h3 className="text-xl font-bold leading-none text-gray-900">
+                      36k+
+                    </h3>
+
+                    <p className="mt-1 whitespace-nowrap text-sm font-medium text-gray-600">
+                      Enrolled Students
+                    </p>
+                  </div>
+                </div>
               </div>
+
+
             </div>
           )}
         </div>
