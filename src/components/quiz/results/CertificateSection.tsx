@@ -7,7 +7,7 @@ type CertificateSectionProps = {
 export function CertificateSection({ result }: CertificateSectionProps) {
   return (
     <div className="w-full">
-      <h2 className="mb-6 text-xl font-bold text-[#07104F]">Certificates</h2>
+      <h2 className="mb-6 text-[20px] font-bold text-[#07104F]">Certificates</h2>
 
       {/* Certificate Preview */}
       <div className="mb-6 overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-[0_2px_20px_rgba(0,0,0,0.06)]">

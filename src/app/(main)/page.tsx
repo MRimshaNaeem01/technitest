@@ -2,6 +2,7 @@ import { AchievementBanner } from "@/components/achievement-banner";
 import { Banner } from "@/components/banner";
 import { HallOfAchievers } from "@/components/hall-of-achievers";
 import { HowItWorks } from "@/components/how-it-works";
+import { HomeClientWrapper } from "@/components/home/HomeClientWrapper";
 import QuizCtaBanner from "@/components/quiz-cta-banner";
 import { Testimonials } from "@/components/testimonials";
 import { TrendingQuizzes } from "@/components/trending-quizzes";
@@ -21,6 +22,7 @@ import {
 export default function HomePage() {
   return (
     <>
+      <HomeClientWrapper />
       <Banner
         title="Attempt Quizzes. Improve Skills."
         highlightedText="Earn Certificates"

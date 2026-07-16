@@ -40,10 +40,10 @@ export function JoinThousands({
             {eyebrow && (
               <p className="mb-3 text-sm font-medium text-brand">{eyebrow}</p>
             )}
-            <h2 className="text-[32px] font-semibold leading-tight text-black">
+            <h2 className="type-section">
               {title}
             </h2>
-            <p className="mt-4 max-w-[520px] text-[#5F5F6B]">{description}</p>
+            <p className="mt-4 max-w-[520px] type-body">{description}</p>
             <div className="mt-10">
               <AppButton href={buttonHref} size="lg">
                 {buttonText}

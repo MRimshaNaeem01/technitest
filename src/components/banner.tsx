@@ -41,7 +41,7 @@ export function Banner({
               </div>
             )}
 
-            <h1 className="text-4xl font-semibold leading-tight text-black md:text-5xl">
+            <h1 className="type-hero text-[36px] md:text-[52px]">
               {title}{" "}
               {highlightedText && (
                 <span className="relative text-[#2945FF]">
@@ -51,7 +51,7 @@ export function Banner({
             </h1>
 
             {description && (
-              <p className="mt-5 max-w-lg text-base leading-7 text-gray-700">
+              <p className="mt-5 max-w-lg type-body">
                 {description}
               </p>
             )}

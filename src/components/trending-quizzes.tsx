@@ -37,7 +37,7 @@ export function TrendingQuizzes({
           {eyebrow && (
             <p className="mb-2 text-sm font-medium text-brand">{eyebrow}</p>
           )}
-          <h2 className="text-3xl font-semibold text-black md:text-4xl">
+          <h2 className="type-section">
             {title}
           </h2>
         </div>
@@ -61,7 +61,7 @@ export function TrendingQuizzes({
 
                 <div className="px-4 pb-5 pt-4">
                   <div className="mb-1 flex items-start justify-between">
-                    <h3 className="text-base font-semibold text-black">
+                    <h3 className="text-[18px] font-semibold text-[#111111]">
                       {quiz.title}
                     </h3>
                     <span className="flex shrink-0 items-center gap-1 text-sm font-medium text-brand">
@@ -74,7 +74,7 @@ export function TrendingQuizzes({
                     {quiz.category}
                   </p>
 
-                  <div className="flex items-center gap-3 text-xs text-gray-500">
+                  <div className="flex items-center gap-3 type-small">
                     <span className="flex items-center gap-1">
                       <BarChart3 className="size-3.5" />
                       {quiz.level}

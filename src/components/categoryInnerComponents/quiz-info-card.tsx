@@ -33,7 +33,7 @@ export function QuizInfoCard({
           <p className="mb-2 text-xs font-medium uppercase tracking-wider text-gray-400">
             {label}
           </p>
-          <h1 className="text-2xl font-semibold text-black md:text-3xl">
+          <h1 className="type-section text-[24px] md:text-[32px]">
             {title}
           </h1>
           <p className="mt-1 text-sm text-indigo-500">{category}</p>
@@ -54,7 +54,7 @@ export function QuizInfoCard({
             </span>
           </div>
 
-          <p className="mt-6 leading-relaxed text-[#5F5F6B]">{description}</p>
+          <p className="mt-6 leading-relaxed type-body">{description}</p>
 
           <div className="mt-6 grid gap-3 sm:grid-cols-2">
             {details.map((d) => (

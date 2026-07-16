@@ -17,7 +17,7 @@ export function ResultShareActions({ quizSlug }: ResultShareActionsProps) {
 
   return (
     <div className="w-full">
-      <h3 className="mb-4 text-center text-base font-semibold text-[#07104F]">
+      <h3 className="mb-4 text-center text-[16px] font-semibold text-[#07104F]">
         Share your Result
       </h3>
       <div className="flex items-center justify-center gap-3">

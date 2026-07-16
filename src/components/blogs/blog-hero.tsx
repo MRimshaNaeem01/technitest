@@ -23,7 +23,7 @@ export function BlogHero({ title }: BlogHeroProps) {
           <span className="text-muted-foreground">Blogs</span>
         </nav>
 
-        <h1 className="text-[28px] font-bold leading-tight text-[#111] md:text-[38px] lg:text-[42px]">
+        <h1 className="type-page text-[28px] md:text-[38px] lg:text-[42px]">
           {title}
         </h1>
       </div>

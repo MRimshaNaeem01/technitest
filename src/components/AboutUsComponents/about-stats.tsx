@@ -17,10 +17,10 @@ export function AboutStats({ stats }: AboutStatsProps) {
           {stats.map((stat, i) => (
             <div key={stat.label} className="flex items-center">
               <div className="px-8 py-4 sm:px-12">
-                <p className="text-[40px] font-bold leading-none text-black">
+                <p className="text-[40px] font-bold leading-none text-[#111111]">
                   {stat.value}
                 </p>
-                <p className="mt-2 text-sm text-[#5F5F6B]">{stat.label}</p>
+                <p className="mt-2 type-label">{stat.label}</p>
               </div>
               {i < stats.length - 1 && (
                 <div className="hidden h-12 w-px bg-gray-300 sm:block" />

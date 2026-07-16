@@ -40,7 +40,7 @@ export function CategoryQuizList({ quizzes }: CategoryQuizListProps) {
               </div>
               <div className="px-4 pb-5 pt-4">
                 <div className="mb-1 flex items-start justify-between">
-                  <h3 className="text-base font-semibold text-black">
+                  <h3 className="text-[18px] font-semibold text-[#111111]">
                     {quiz.title}
                   </h3>
                   <span className="flex shrink-0 items-center gap-1 text-sm font-medium text-brand">
@@ -51,7 +51,7 @@ export function CategoryQuizList({ quizzes }: CategoryQuizListProps) {
                 <p className="mb-4 text-sm italic text-indigo-500">
                   {quiz.category}
                 </p>
-                <div className="flex items-center gap-3 text-xs text-gray-500">
+                <div className="flex items-center gap-3 type-small">
                   <span className="flex items-center gap-1">
                     <BarChart3 className="size-3.5" />
                     {quiz.level}

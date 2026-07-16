@@ -48,11 +48,11 @@ export function AchievementBanner({
               <p className="mb-2 text-sm font-medium text-brand">{eyebrow}</p>
             )}
 
-            <h2 className="text-3xl font-semibold leading-tight text-black md:text-4xl">
+            <h2 className="type-section">
               {title}
             </h2>
 
-            <div className="mt-6 space-y-4 text-sm leading-6 text-gray-700">
+            <div className="mt-6 space-y-4 text-[15px] leading-7 text-[#5F6368]">
               {description.map((text, index) => (
                 <p key={index}>{text}</p>
               ))}
@@ -64,7 +64,7 @@ export function AchievementBanner({
                   <h3 className="text-4xl font-semibold text-brand">
                     {stat.value}
                   </h3>
-                  <p className="mt-1 text-sm text-black">{stat.label}</p>
+                  <p className="mt-1 type-label text-[#111111]">{stat.label}</p>
                 </div>
               ))}
             </div>

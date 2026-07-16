@@ -27,7 +27,7 @@ export function FaqAccordion({ items }: FaqAccordionProps) {
             onClick={() => toggle(i)}
             className="flex w-full items-center justify-between py-5 text-left"
           >
-            <span className="text-sm font-medium text-black">
+            <span className="text-[14px] font-medium text-[#111111]">
               {item.question}
             </span>
             <span className="flex size-7 shrink-0 items-center justify-center rounded-full bg-gray-100">

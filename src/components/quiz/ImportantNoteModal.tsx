@@ -61,7 +61,7 @@ export function ImportantNoteModal({
 
         <h2
           id="important-note-title"
-          className="mb-5 text-center text-xl font-bold text-gray-900"
+          className="mb-5 text-center text-[20px] font-bold text-[#111111]"
         >
           Important Note!
         </h2>

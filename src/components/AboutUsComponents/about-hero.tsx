@@ -20,11 +20,11 @@ export function AboutHero({
         {eyebrow && !breadcrumb && (
           <p className="mb-4 text-sm font-medium text-brand">{eyebrow}</p>
         )}
-        <h1 className="mx-auto max-w-3xl text-[34px] font-semibold leading-tight text-black">
+        <h1 className="mx-auto max-w-3xl type-page text-[36px] md:text-[48px]">
           {title}
         </h1>
         {description && (
-          <p className="mx-auto mt-4 max-w-[620px] text-[#5F5F6B]">
+          <p className="mx-auto mt-4 max-w-[620px] type-body">
             {description}
           </p>
         )}

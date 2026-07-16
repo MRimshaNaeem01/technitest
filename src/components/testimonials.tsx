@@ -36,7 +36,7 @@ export function Testimonials({
           {eyebrow && (
             <p className="mb-2 text-sm font-medium text-brand">{eyebrow}</p>
           )}
-          <h2 className="text-3xl font-semibold text-black md:text-4xl">
+          <h2 className="type-section">
             {title}
           </h2>
         </div>
@@ -64,7 +64,7 @@ export function Testimonials({
               <Quote className="size-5 text-indigo-500" />
             </div>
 
-            <p className="text-[22px] leading-relaxed text-gray-700">
+            <p className="text-[18px] leading-relaxed text-[#5F6368]">
               {t.review}
             </p>
 
@@ -72,7 +72,7 @@ export function Testimonials({
 
             <div className="flex flex-wrap items-center gap-3">
               <div>
-                <p className="font-semibold text-black">{t.name}</p>
+                <p className="text-[16px] font-semibold text-[#111111]">{t.name}</p>
                 <p className="text-sm text-indigo-500">{t.role}</p>
               </div>
 

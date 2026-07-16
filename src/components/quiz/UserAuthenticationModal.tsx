@@ -61,7 +61,7 @@ export function UserAuthenticationModal({
 
         <h2
           id="user-auth-title"
-          className="mb-4 text-center text-xl font-bold text-gray-900"
+          className="mb-4 text-center text-[20px] font-bold text-[#111111]"
         >
           User Authentication
         </h2>

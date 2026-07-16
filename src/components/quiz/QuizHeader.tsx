@@ -33,7 +33,7 @@ export function QuizHeader({
       {/* Left — Quiz Name */}
       <div className="min-w-0">
         <p className="mb-1 text-sm font-medium text-brand-link">Quiz Name</p>
-        <h1 className="truncate text-lg font-semibold text-gray-900">
+        <h1 className="truncate text-[16px] font-semibold text-[#111111]">
           {quizTitle}
         </h1>
       </div>

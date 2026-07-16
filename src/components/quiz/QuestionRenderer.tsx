@@ -18,7 +18,7 @@ export function QuestionRenderer({
 }: QuestionRendererProps) {
   return (
     <div>
-      <p className="mb-10 text-[26px] font-medium leading-[1.4] text-gray-900 sm:text-[30px]">
+      <p className="mb-10 text-[24px] font-medium leading-[1.4] text-[#111111] sm:text-[28px]">
         {question.question}
       </p>
 

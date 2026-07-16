@@ -32,7 +32,7 @@ export function HallOfAchievers({
           {eyebrow && (
             <p className="mb-3 text-sm font-medium text-brand">{eyebrow}</p>
           )}
-          <h2 className="text-3xl font-semibold text-black md:text-4xl">
+          <h2 className="type-section">
             {title}
           </h2>
         </div>
@@ -51,7 +51,7 @@ export function HallOfAchievers({
               </div>
 
               <div className="mt-4 flex items-start justify-between">
-                <h3 className="text-base font-semibold text-black">
+                <h3 className="text-[18px] font-semibold text-[#111111]">
                   {achiever.name}
                 </h3>
                 <span className="flex shrink-0 items-center gap-0.5">
@@ -68,7 +68,7 @@ export function HallOfAchievers({
                 {achiever.certificate}
               </p>
 
-              <div className="mt-3 flex items-center gap-3 text-xs text-gray-500">
+              <div className="mt-3 flex items-center gap-3 type-small">
                 <span className="flex items-center gap-1">
                   <BarChart3 className="size-3.5" />
                   {achiever.level}

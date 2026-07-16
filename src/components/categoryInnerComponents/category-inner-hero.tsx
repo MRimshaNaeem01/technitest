@@ -13,11 +13,11 @@ export function CategoryInnerHero({
     <section className="relative flex min-h-[260px] items-center justify-center overflow-hidden bg-[#F7F7FF]">
       <div className="py-14 text-center">
         <p className="mb-4 text-sm text-gray-500">{breadcrumb}</p>
-        <h1 className="text-[34px] font-semibold leading-tight text-black">
+        <h1 className="type-page text-[36px] md:text-[48px]">
           {title}
         </h1>
         {description && (
-          <p className="mx-auto mt-4 max-w-[620px] text-[#5F5F6B]">
+          <p className="mx-auto mt-4 max-w-[620px] type-body">
             {description}
           </p>
         )}

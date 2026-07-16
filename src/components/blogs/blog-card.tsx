@@ -27,7 +27,7 @@ export function BlogCard({ title, image, date, author, slug }: BlogCardProps) {
           </div>
         </div>
 
-        <div className="mt-4 flex items-center gap-3 text-xs text-muted-foreground">
+        <div className="mt-4 flex items-center gap-3 type-small">
           <span className="flex items-center gap-1">
             <Calendar className="h-3.5 w-3.5" />
             {date}
@@ -39,7 +39,7 @@ export function BlogCard({ title, image, date, author, slug }: BlogCardProps) {
           </span>
         </div>
 
-        <h3 className="mt-2.5 text-base font-semibold leading-snug text-[#111] transition-colors group-hover:text-brand line-clamp-2">
+        <h3 className="mt-2.5 text-[16px] font-semibold leading-snug text-[#111111] transition-colors group-hover:text-brand line-clamp-2">
           {title}
         </h3>
 

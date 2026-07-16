@@ -6,6 +6,7 @@ import { Container } from "@/components/common/container";
 import { BlogHero } from "@/components/blogs/blog-hero";
 import { TableOfContents } from "@/components/blogs/table-of-contents";
 import { BlogSearch } from "@/components/blogs/blog-search";
+import { ProsConsSection } from "@/components/blogs/ProsConsSection";
 
 const BLOG_POSTS = [
   {
@@ -15,6 +16,48 @@ const BLOG_POSTS = [
     date: "02 January 2024",
     author: "Thumanah",
     slug: "top-5-reasons-online-quizzes-before-jobs",
+    prosCons: {
+      prosDescription:
+        "Online quizzes offer a fast, accessible way to validate your skills and stand out in the job market. They provide immediate feedback and verifiable results that employers trust.",
+      consDescription:
+        "While online quizzes are valuable, they have limitations. They may not fully replace deeper assessments and require careful platform selection to ensure credibility.",
+      pros: [
+        {
+          id: "pros-1",
+          text: "24/7 Accessibility: Customers can book services anytime, even outside business hours.",
+        },
+        {
+          id: "pros-2",
+          text: "Professional First Impression: A clean, modern site builds trust and credibility.",
+        },
+        {
+          id: "pros-3",
+          text: "Showcase Services & Reviews: Helps build customer confidence and transparency.",
+        },
+        {
+          id: "pros-4",
+          text: "Before & After Visuals: Real results shown visually increase trust.",
+        },
+      ],
+      cons: [
+        {
+          id: "cons-1",
+          text: "Initial setup may require additional planning and implementation time.",
+        },
+        {
+          id: "cons-2",
+          text: "Ongoing updates and maintenance may require extra resources.",
+        },
+        {
+          id: "cons-3",
+          text: "Some users may need time to adjust to the new experience.",
+        },
+        {
+          id: "cons-4",
+          text: "Advanced functionality may increase development costs.",
+        },
+      ],
+    },
   },
   {
     id: 2,
@@ -23,6 +66,48 @@ const BLOG_POSTS = [
     date: "15 December 2023",
     author: "Sarah",
     slug: "earn-certificate-under-10-minutes",
+    prosCons: {
+      prosDescription:
+        "Earning a certificate has never been faster. TechniTest lets you complete quizzes and get certified in minutes, with no signup required.",
+      consDescription:
+        "Quick certifications are convenient but may carry less weight than longer, more comprehensive programs in certain industries.",
+      pros: [
+        {
+          id: "pros-1",
+          text: "Fast Completion: Finish a quiz and earn your certificate in under 10 minutes.",
+        },
+        {
+          id: "pros-2",
+          text: "No Signup Required: Start immediately without creating an account.",
+        },
+        {
+          id: "pros-3",
+          text: "Verified Results: Get a shareable certificate that employers can verify.",
+        },
+        {
+          id: "pros-4",
+          text: "Wide Topic Range: Choose from IT, Business, English, and more.",
+        },
+      ],
+      cons: [
+        {
+          id: "cons-1",
+          text: "Limited depth: Quick quizzes may not cover topics in full detail.",
+        },
+        {
+          id: "cons-2",
+          text: "No structured learning path: Each quiz is standalone.",
+        },
+        {
+          id: "cons-3",
+          text: "Recognition varies: Some employers may prefer traditional certifications.",
+        },
+        {
+          id: "cons-4",
+          text: "No instructor support: Self-assessment only.",
+        },
+      ],
+    },
   },
   {
     id: 3,
@@ -31,6 +116,48 @@ const BLOG_POSTS = [
     date: "28 November 2023",
     author: "Ahmed",
     slug: "beginner-vs-advanced-quizzes",
+    prosCons: {
+      prosDescription:
+        "Choosing the right quiz level ensures you learn effectively. Beginner quizzes build foundations while advanced ones test mastery.",
+      consDescription:
+        "Selecting the wrong level can lead to frustration or boredom, and not all quizzes clearly indicate difficulty.",
+      pros: [
+        {
+          id: "pros-1",
+          text: "Beginner quizzes build confidence and foundational knowledge.",
+        },
+        {
+          id: "pros-2",
+          text: "Advanced quizzes validate deep expertise and mastery.",
+        },
+        {
+          id: "pros-3",
+          text: "Clear difficulty labels help you choose appropriately.",
+        },
+        {
+          id: "pros-4",
+          text: "Progress tracking shows your growth over time.",
+        },
+      ],
+      cons: [
+        {
+          id: "cons-1",
+          text: "Difficulty labels may not always match actual complexity.",
+        },
+        {
+          id: "cons-2",
+          text: "Advanced quizzes may feel overwhelming without preparation.",
+        },
+        {
+          id: "cons-3",
+          text: "No adaptive difficulty to match your exact skill level.",
+        },
+        {
+          id: "cons-4",
+          text: "Limited explanations for incorrect answers at advanced levels.",
+        },
+      ],
+    },
   },
   {
     id: 4,
@@ -39,6 +166,48 @@ const BLOG_POSTS = [
     date: "10 November 2023",
     author: "Thumanah",
     slug: "online-certificates-boost-resume",
+    prosCons: {
+      prosDescription:
+        "Online certificates demonstrate initiative and verified skills to potential employers, making your resume stand out in a competitive market.",
+      consDescription:
+        "Not all online certificates carry equal weight, and some employers may prioritize traditional qualifications.",
+      pros: [
+        {
+          id: "pros-1",
+          text: "Shows initiative and commitment to continuous learning.",
+        },
+        {
+          id: "pros-2",
+          text: "Provides verifiable proof of specific skills.",
+        },
+        {
+          id: "pros-3",
+          text: "Easy to share on LinkedIn and other platforms.",
+        },
+        {
+          id: "pros-4",
+          text: "Can differentiate you from other candidates.",
+        },
+      ],
+      cons: [
+        {
+          id: "cons-1",
+          text: "Employer recognition varies by industry.",
+        },
+        {
+          id: "cons-2",
+          text: "May not replace formal degrees or certifications.",
+        },
+        {
+          id: "cons-3",
+          text: "Quality and rigor differ across platforms.",
+        },
+        {
+          id: "cons-4",
+          text: "Over-reliance on certificates may overshadow practical experience.",
+        },
+      ],
+    },
   },
   {
     id: 5,
@@ -47,6 +216,48 @@ const BLOG_POSTS = [
     date: "25 October 2023",
     author: "Amina",
     slug: "ultimate-guide-skill-based-learning",
+    prosCons: {
+      prosDescription:
+        "Skill-based learning focuses on practical, applicable knowledge that directly translates to career advancement and job performance.",
+      consDescription:
+        "This approach requires self-discipline and may not provide the theoretical depth some roles demand.",
+      pros: [
+        {
+          id: "pros-1",
+          text: "Directly applicable to real-world job tasks.",
+        },
+        {
+          id: "pros-2",
+          text: "Faster ROI compared to traditional education.",
+        },
+        {
+          id: "pros-3",
+          text: "Flexible learning pace and schedule.",
+        },
+        {
+          id: "pros-4",
+          text: "Builds a portfolio of demonstrable skills.",
+        },
+      ],
+      cons: [
+        {
+          id: "cons-1",
+          text: "Requires strong self-motivation and discipline.",
+        },
+        {
+          id: "cons-2",
+          text: "May lack deep theoretical foundations.",
+        },
+        {
+          id: "cons-3",
+          text: "Skill relevance can change rapidly in fast-moving fields.",
+        },
+        {
+          id: "cons-4",
+          text: "No formal academic recognition in most cases.",
+        },
+      ],
+    },
   },
   {
     id: 6,
@@ -55,6 +266,48 @@ const BLOG_POSTS = [
     date: "12 October 2023",
     author: "John",
     slug: "micro-learning-digital-age",
+    prosCons: {
+      prosDescription:
+        "Micro-learning breaks complex topics into bite-sized sessions, making it easier to fit skill development into a busy schedule.",
+      consDescription:
+        "Short sessions may not be sufficient for deep understanding of complex subjects.",
+      pros: [
+        {
+          id: "pros-1",
+          text: "Fits into any schedule with 5-minute sessions.",
+        },
+        {
+          id: "pros-2",
+          text: "High retention through focused, single-topic learning.",
+        },
+        {
+          id: "pros-3",
+          text: "Instant feedback keeps you engaged.",
+        },
+        {
+          id: "pros-4",
+          text: "Easy to revisit and reinforce specific topics.",
+        },
+      ],
+      cons: [
+        {
+          id: "cons-1",
+          text: "Insufficient for complex or multi-layered topics.",
+        },
+        {
+          id: "cons-2",
+          text: "Can feel fragmented without a structured path.",
+        },
+        {
+          id: "cons-3",
+          text: "May encourage surface-level learning.",
+        },
+        {
+          id: "cons-4",
+          text: "Limited opportunity for deep practice or projects.",
+        },
+      ],
+    },
   },
 ];
 
@@ -162,6 +415,16 @@ export default async function BlogDetailPage({
                 quiz is designed by industry professionals to ensure relevance
                 and quality.
               </p>
+
+              {post.prosCons && (
+                <ProsConsSection
+                  prosDescription={post.prosCons.prosDescription}
+                  consDescription={post.prosCons.consDescription}
+                  pros={post.prosCons.pros}
+                  cons={post.prosCons.cons}
+                  className="mt-10"
+                />
+              )}
 
               <h2 className="mt-10 flex items-center gap-2 text-xl font-bold text-[#111]">
                 <ArrowRight className="h-5 w-5 text-brand" />

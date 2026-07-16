@@ -33,7 +33,7 @@ export function HowItWorks({
           {eyebrow && (
             <p className="mb-3 text-sm font-medium text-brand">{eyebrow}</p>
           )}
-          <h2 className="text-3xl font-semibold text-black md:text-4xl">
+          <h2 className="type-section">
             {title}
           </h2>
         </div>
@@ -45,10 +45,10 @@ export function HowItWorks({
                 <div className="mb-4 text-brand">
                   {step.icon ?? defaultIcons[index] ?? null}
                 </div>
-                <h3 className="mb-2 text-lg font-medium text-black">
+                <h3 className="mb-2 text-[16px] font-medium text-[#111111]">
                   {step.title}
                 </h3>
-                <p className="mx-auto max-w-[180px] text-[13px] leading-relaxed text-gray-600">
+                <p className="mx-auto max-w-[180px] text-[14px] leading-relaxed text-[#5F6368]">
                   {step.description}
                 </p>
               </div>

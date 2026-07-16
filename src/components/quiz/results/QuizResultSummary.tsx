@@ -10,7 +10,7 @@ export function QuizResultSummary({ result, onReAttempt }: QuizResultSummaryProp
   return (
     <div className="flex min-h-0 flex-col rounded-[20px] bg-white px-8 py-8 shadow-[0_10px_35px_rgba(0,0,0,0.06)] lg:min-h-[600px]">
       <div>
-        <h2 className="mb-1 text-xl font-bold text-[#07104F]">Your Quiz Results</h2>
+        <h2 className="mb-1 text-[20px] font-bold text-[#07104F]">Your Quiz Results</h2>
         <p className="mb-8 text-sm text-[#777]">Well done! Here&apos;s how you performed.</p>
 
         {/* Pass/Fail Icon */}

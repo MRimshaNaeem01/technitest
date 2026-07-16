@@ -3,7 +3,7 @@ import { Search } from "lucide-react";
 export function BlogSearch() {
   return (
     <div className="rounded-2xl bg-[#f5f5f5] p-6 shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
-      <h3 className="mb-4 text-center text-base font-semibold text-[#111]">
+      <h3 className="mb-4 text-center text-[16px] font-semibold text-[#111111]">
         Search
       </h3>
       <div className="relative">

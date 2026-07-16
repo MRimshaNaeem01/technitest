@@ -11,7 +11,7 @@ const items = [
 export function TableOfContents() {
   return (
     <div className="rounded-2xl bg-white p-6 shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
-      <h3 className="mb-5 text-center text-base font-semibold text-[#111]">
+      <h3 className="mb-5 text-center text-[16px] font-semibold text-[#111111]">
         Table of Content
       </h3>
       <ul className="space-y-3">

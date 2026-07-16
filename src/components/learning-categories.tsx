@@ -25,7 +25,7 @@ export function LearningCategories({
     <section className="py-16">
       <div className="mb-10 text-center">
         <p className="mb-2 text-sm font-medium text-brand">{eyebrow}</p>
-        <h2 className="text-3xl font-semibold text-black md:text-4xl">
+        <h2 className="type-section">
           {title}
         </h2>
       </div>
@@ -40,10 +40,10 @@ export function LearningCategories({
             <Card className="bg-white shadow-[0_8px_24px_rgba(0,0,0,0.08)] ring-0 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(0,0,0,0.12)]">
               <CardContent className="flex h-[140px] flex-col items-center justify-center text-center">
                 <div className="mb-3 text-4xl">{category.icon}</div>
-                <h3 className="text-base font-medium text-black">
+                <h3 className="text-[16px] font-medium text-[#111111]">
                   {category.title}
                 </h3>
-                <p className="mt-1 text-sm text-gray-500">{category.quizzes}</p>
+                <p className="mt-1 type-label">{category.quizzes}</p>
               </CardContent>
             </Card>
           </Link>

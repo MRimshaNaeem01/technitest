@@ -11,11 +11,11 @@ export function CategoryHero({ title, description }: CategoryHeroProps) {
           Home <span className="mx-1">›</span>{" "}
           <span className="text-black">Categories</span>
         </p>
-        <h1 className="text-[34px] font-semibold leading-tight text-black">
+        <h1 className="type-page text-[36px] md:text-[48px]">
           {title}
         </h1>
         {description && (
-          <p className="mx-auto mt-4 max-w-[620px] text-[#5F5F6B]">
+          <p className="mx-auto mt-4 max-w-[620px] type-body">
             {description}
           </p>
         )}

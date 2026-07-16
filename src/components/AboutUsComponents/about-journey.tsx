@@ -31,11 +31,11 @@ export function AboutJourney({
         {eyebrow && (
           <p className="mb-3 text-sm font-medium text-brand">{eyebrow}</p>
         )}
-        <h2 className="text-[32px] font-semibold leading-tight text-black">
+        <h2 className="type-section">
           {title}
         </h2>
         {description && (
-          <p className="mt-4 max-w-[620px] text-[#5F5F6B]">{description}</p>
+          <p className="mt-4 max-w-[620px] type-body">{description}</p>
         )}
 
         <div className="mt-14 flex flex-col gap-14 lg:flex-row">
@@ -49,12 +49,12 @@ export function AboutJourney({
                     : "bg-[#F5F5FF] text-black"
                 }`}
               >
-                <h3 className="text-xl font-semibold">{card.title}</h3>
+                <h3 className="text-[20px] font-semibold text-[#111111]">{card.title}</h3>
                 <p
-                  className={`mt-3 leading-relaxed ${
+                  className={`mt-3 text-[15px] leading-relaxed ${
                     card.variant === "blue"
                       ? "text-white/80"
-                      : "text-[#5F5F6B]"
+                      : "text-[#5F6368]"
                   }`}
                 >
                   {card.description}

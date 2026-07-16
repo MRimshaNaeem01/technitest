@@ -66,7 +66,7 @@ export function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="mb-4 text-lg font-semibold">Quick Links</h3>
+            <h3 className="mb-4 text-[16px] font-semibold">Quick Links</h3>
             <ul className="space-y-2">
               {footerQuickLinks.map((link) => (
                 <li key={link.href}>
@@ -83,7 +83,7 @@ export function Footer() {
 
           {/* Categories */}
           <div>
-            <h3 className="mb-4 text-lg font-semibold">Categories</h3>
+            <h3 className="mb-4 text-[16px] font-semibold">Categories</h3>
             <ul className="space-y-2">
               {footerCategories.map((category) => (
                 <li key={category}>
@@ -100,7 +100,7 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="mb-4 text-lg font-semibold">Contact Us</h3>
+            <h3 className="mb-4 text-[16px] font-semibold">Contact Us</h3>
             <ul className="space-y-3 text-sm text-footer-muted">
               <li>{siteContact.address}</li>
               <li className="flex items-center gap-2">

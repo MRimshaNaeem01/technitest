@@ -34,7 +34,7 @@ export function QuizDetailsCard({ result }: QuizDetailsCardProps) {
 
   return (
     <div className="flex min-h-0 flex-col rounded-[20px] bg-white px-8 py-8 shadow-[0_10px_35px_rgba(0,0,0,0.06)] lg:min-h-[600px]">
-      <h2 className="mb-2 text-xl font-semibold text-[#07104F]">
+      <h2 className="mb-2 text-[20px] font-semibold text-[#07104F]">
         Quiz Details
       </h2>
 

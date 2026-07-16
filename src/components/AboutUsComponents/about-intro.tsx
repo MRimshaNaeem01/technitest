@@ -44,10 +44,10 @@ export function AboutIntro({
             {eyebrow && (
               <p className="mb-3 text-sm font-medium text-brand">{eyebrow}</p>
             )}
-            <h2 className="text-[32px] font-semibold leading-tight text-black">
+            <h2 className="type-section">
               {title}
             </h2>
-            <div className="mt-6 space-y-4 text-[#5F5F6B]">
+            <div className="mt-6 space-y-4 type-body">
               {paragraphs.map((p, i) => (
                 <p key={i}>{p}</p>
               ))}
