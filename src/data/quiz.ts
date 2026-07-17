@@ -8,7 +8,7 @@ export const dummyQuiz: Quiz = {
   rating: 4.9,
   level: "Trending",
   duration: "45 Minutes",
-  questionCount: 3,
+  questionCount: 4,
   durationPerQuestion: 40,
   description:
     "Test your knowledge of advanced marketing principles, strategies, and best practices. This comprehensive quiz covers brand management, digital marketing, consumer behavior, and market analysis.",
@@ -48,6 +48,18 @@ export const dummyQuiz: Quiz = {
         { id: "d", label: "Number of employees" },
       ],
       correctAnswer: "b",
+    },
+    {
+      id: "q4",
+      type: "image",
+      question: 'Which image represents "Guerrilla Marketing"?',
+      options: [
+        { id: "img-1", image: "/quiz11 (1).png" },
+        { id: "img-2", image: "/quiz11 (2).png" },
+        { id: "img-3", image: "/quiz11 (1).png" },
+        { id: "img-4", image: "/quiz11 (3).png" },
+      ],
+      correctAnswer: "img-1",
     },
   ],
 };

@@ -147,9 +147,9 @@ export default function QuizAttemptPage({ params }: QuizAttemptPageProps) {
   };
 
   return (
-    <div className=" bg-[#F6F7FF] h-[800px] px-10 py-8">
-      <div className="w-full overflow-hidden rounded-[16px] bg-white shadow-sm">
-        {/* Header */}
+    <div className="min-h-screen overflow-x-hidden bg-[#F6F7FF] px-10 py-8 max-md:px-4 max-md:py-4">
+      <div className="flex h-[calc(100vh-110px)] min-h-[700px] max-h-[820px] w-full max-md:h-auto max-md:min-h-screen max-md:rounded-none flex-col overflow-hidden rounded-[12px] border border-[#E8E9F8] bg-white max-md:border-0">
+        {/* Header — fixed */}
         <QuizHeader
           quizTitle={quiz.title}
           currentQuestion={currentIndex + 1}
@@ -163,9 +163,9 @@ export default function QuizAttemptPage({ params }: QuizAttemptPageProps) {
           isTimerLocked={isExpired || isSubmitted}
         />
 
-        {/* Main Content */}
+        {/* Main Content — flexible */}
         {showSubmitConfirmation ? (
-          <div className="border-t border-[#ECEEFF]">
+          <div className="flex min-h-0 flex-1 flex-col border-t border-[#E8E9F8]">
             <QuizSubmitConfirmation
               answeredQuestions={answeredCount}
               totalQuestions={quiz.questions.length}
@@ -173,75 +173,81 @@ export default function QuizAttemptPage({ params }: QuizAttemptPageProps) {
             />
           </div>
         ) : !isSubmitted ? (
-          <main className="relative mx-auto w-full max-w-[720px] px-6 pb-[65px] pt-[64px]">
-            {/* Bookmark */}
-            <button
-              onClick={handleToggleBookmark}
-              aria-label={isBookmarked ? "Remove bookmark" : "Bookmark question"}
-              className="absolute right-[-80px] top-[38px] flex h-[42px] w-[42px] items-center justify-center rounded-full bg-white shadow-[0_4px_14px_rgba(0,0,0,0.08)] transition-shadow hover:shadow-[0_6px_20px_rgba(0,0,0,0.12)] max-lg:hidden"
-            >
-              <Heart
-                className={`h-5 w-5 transition-colors ${
-                  isBookmarked
-                    ? "fill-brand text-brand"
-                    : "text-gray-800"
-                }`}
-              />
-            </button>
-
-            {/* Mobile bookmark */}
-            <button
-              onClick={handleToggleBookmark}
-              aria-label={isBookmarked ? "Remove bookmark" : "Bookmark question"}
-              className="absolute right-6 top-6 flex h-[42px] w-[42px] items-center justify-center rounded-full bg-white shadow-[0_4px_14px_rgba(0,0,0,0.08)] lg:hidden"
-            >
-              <Heart
-                className={`h-5 w-5 transition-colors ${
-                  isBookmarked
-                    ? "fill-brand text-brand"
-                    : "text-gray-800"
-                }`}
-              />
-            </button>
-
-            <QuestionRenderer
-              question={currentQuestion}
-              selectedAnswer={selectedAnswer}
-              onSelect={handleSelectAnswer}
-              isLocked={isExpired}
-            />
-
-            {/* Actions */}
-            <div className="mt-12 flex items-center gap-4">
-              <button
-                onClick={handleSkip}
-                disabled={currentIndex >= quiz.questions.length - 1}
-                className="h-[46px] min-w-[100px] rounded-full bg-[#F1F1F1] px-8 text-[14px] font-medium text-[#4B5563] transition-colors hover:bg-[#E5E5E5] disabled:cursor-not-allowed disabled:opacity-40"
-              >
-                Skip
-              </button>
-
-              {currentIndex === quiz.questions.length - 1 ? (
+          <main className="relative flex min-h-0 flex-1 overflow-y-auto max-md:overflow-y-auto">
+            <div className="mx-auto w-full max-w-[900px] px-8 py-12 max-md:px-5 max-md:py-8">
+              <div className="relative mx-auto w-full max-w-[760px]">
+                {/* Bookmark */}
                 <button
-                  onClick={handleSubmit}
-                  className="h-[46px] min-w-[100px] rounded-full bg-[#F59E0B] px-8 text-[14px] font-medium text-white transition-colors hover:bg-[#D97706]"
+                  onClick={handleToggleBookmark}
+                  aria-label={isBookmarked ? "Remove bookmark" : "Bookmark question"}
+                  className="absolute right-[-60px] top-0 flex h-[42px] w-[42px] items-center justify-center rounded-full bg-white shadow-[0_4px_14px_rgba(0,0,0,0.08)] transition-shadow hover:shadow-[0_6px_20px_rgba(0,0,0,0.12)] max-lg:hidden"
                 >
-                  Submit Quiz
+                  <Heart
+                    className={`h-5 w-5 transition-colors ${
+                      isBookmarked
+                        ? "fill-brand text-brand"
+                        : "text-gray-800"
+                    }`}
+                  />
                 </button>
-              ) : (
+
+                {/* Mobile bookmark */}
                 <button
-                  onClick={handleNext}
-                  className="h-[46px] min-w-[100px] rounded-full bg-[#F59E0B] px-8 text-[14px] font-medium text-white transition-colors hover:bg-[#D97706]"
+                  onClick={handleToggleBookmark}
+                  aria-label={isBookmarked ? "Remove bookmark" : "Bookmark question"}
+                  className="absolute right-0 top-0 flex h-[42px] w-[42px] items-center justify-center rounded-full bg-white shadow-[0_4px_14px_rgba(0,0,0,0.08)] lg:hidden"
                 >
-                  Next
+                  <Heart
+                    className={`h-5 w-5 transition-colors ${
+                      isBookmarked
+                        ? "fill-brand text-brand"
+                        : "text-gray-800"
+                    }`}
+                  />
                 </button>
-              )}
+
+                <QuestionRenderer
+                  question={currentQuestion}
+                  selectedAnswer={selectedAnswer}
+                  onSelect={handleSelectAnswer}
+                  isLocked={isExpired}
+                />
+
+                {/* Actions */}
+                <div className="mt-10 flex items-center gap-3">
+                  <button
+                    onClick={handleSkip}
+                    disabled={currentIndex >= quiz.questions.length - 1}
+                    className="h-[46px] min-w-[100px] rounded-full bg-[#F1F1F1] px-8 text-[14px] font-medium text-[#4B5563] transition-colors hover:bg-[#E5E5E5] disabled:cursor-not-allowed disabled:opacity-40"
+                  >
+                    Skip
+                  </button>
+
+                  {currentIndex === quiz.questions.length - 1 ? (
+                    <button
+                      onClick={handleSubmit}
+                      className="h-[46px] min-w-[100px] rounded-full bg-[#F59E0B] px-8 text-[14px] font-medium text-white transition-colors hover:bg-[#D97706]"
+                    >
+                      Submit Quiz
+                    </button>
+                  ) : (
+                    <button
+                      onClick={handleNext}
+                      className="h-[46px] min-w-[100px] rounded-full bg-[#F59E0B] px-8 text-[14px] font-medium text-white transition-colors hover:bg-[#D97706]"
+                    >
+                      Next
+                    </button>
+                  )}
+                </div>
+              </div>
             </div>
           </main>
-        ) : null}
+        ) : (
+          <div className="flex min-h-0 flex-1" />
+        )}
 
-        {/* Pagination Footer */}
-        <div className="border-t border-[#DDE1FF] px-8 py-[26px] text-center">
+        {/* Pagination Footer — fixed */}
+        <footer className="flex min-h-[100px] shrink-0 flex-col items-center justify-center border-t border-[#E8E9F8] px-6 py-5">
           <QuizPagination
             totalQuestions={quiz.questions.length}
             currentQuestionIndex={currentIndex}
@@ -253,7 +259,7 @@ export default function QuizAttemptPage({ params }: QuizAttemptPageProps) {
             onPrevious={handlePrev}
             onNext={handleNext}
           />
-        </div>
+        </footer>
       </div>
     </div>
   );

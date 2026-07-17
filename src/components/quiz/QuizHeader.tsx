@@ -28,7 +28,7 @@ export function QuizHeader({
   isTimerLocked,
 }: QuizHeaderProps) {
   return (
-    <header className="grid min-h-[115px] grid-cols-[1fr_1.2fr_1fr] items-center gap-8 border-b border-[#ECEEFF] px-[60px] py-[24px] max-lg:grid-cols-1 max-lg:gap-6 max-lg:py-6">
+    <header className="grid min-h-[115px] shrink-0 grid-cols-[1fr_1.2fr_1fr] items-center gap-8 border-b border-[#ECEEFF] px-[60px] py-[24px] max-lg:grid-cols-1 max-lg:gap-6 max-lg:py-6">
       {/* Left — Quiz Name */}
       <div className="min-w-0 max-lg:text-center">
         <p className="font-poppins text-[17px] font-medium text-[#2533F1]">

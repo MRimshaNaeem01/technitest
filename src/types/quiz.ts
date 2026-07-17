@@ -1,11 +1,12 @@
 export type QuizOption = {
   id: string;
-  label: string;
+  label?: string;
+  image?: string;
 };
 
 export type QuizQuestion = {
   id: string;
-  type: "multiple-choice" | "true-false";
+  type: "multiple-choice" | "true-false" | "image";
   question: string;
   options: QuizOption[];
   correctAnswer: string;
