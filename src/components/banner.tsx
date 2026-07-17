@@ -127,7 +127,7 @@ export function Banner({
                 className="h-auto w-full z-0 max-w-[540px] object-contain"
               />
 
-              <div className="absolute left-0 top-40">
+              <div className="absolute left-26 top-40">
                 <div
                   className="
       flex items-center gap-4

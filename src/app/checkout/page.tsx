@@ -37,7 +37,7 @@ export default function CheckoutPage() {
     <div className="min-h-screen bg-white">
       <CheckoutHeader />
 
-      <div className="mx-auto max-w-[1400px] px-4 py-8 sm:px-6 lg:px-10">
+      <div className="mx-auto w-full max-w-[1440px] px-8 py-8 xl:px-10 2xl:px-12">
         <div className="flex flex-col gap-8 lg:flex-row lg:gap-0">
           {/* Left — Billing + Payment */}
           <div className="lg:w-[55%] lg:pr-10 lg:border-r lg:border-[#E6E6EC]">

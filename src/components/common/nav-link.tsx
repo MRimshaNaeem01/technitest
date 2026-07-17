@@ -18,7 +18,7 @@ export function NavLink({ href, label }: NavLinkProps) {
     <Link
       href={href}
       className={cn(
-        "relative pb-1 text-sm font-medium text-foreground transition-colors hover:text-brand",
+        "relative pb-1 text-[17px] font-medium text-foreground transition-colors hover:text-brand",
         isActive && "text-brand"
       )}
     >

@@ -54,7 +54,7 @@ export default function QuizResultPage({ params }: ResultPageProps) {
   return (
     <section className="bg-[#F5F5FF] py-10 sm:py-16">
       <Container>
-        <div className="mx-auto max-w-5xl space-y-10">
+        <div className="mx-auto w-full max-w-[1540px] space-y-10">
           {/* Top Result Cards */}
           <div className="grid gap-6 lg:grid-cols-2 lg:items-stretch">
             <QuizResultSummary result={result} onReAttempt={handleReAttempt} />

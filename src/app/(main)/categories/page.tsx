@@ -143,6 +143,7 @@ export default function CategoriesPage() {
         title="Test Your Knowledge"
         categories={categories}
         viewAllHref="#"
+        className="px-16"
       />
       <TrendingQuizzes
         eyebrow="Quizzes"

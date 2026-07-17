@@ -16,7 +16,7 @@ type QuizReviewsProps = {
 export function QuizReviews({ reviews }: QuizReviewsProps) {
   return (
     <section className="bg-white pb-20">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto w-full max-w-[1440px] px-8 xl:px-10 2xl:px-12">
         <div className="rounded-xl bg-white p-8 shadow-sm">
           <div className="mb-6 flex items-center justify-between">
             <div className="flex items-center gap-3">
