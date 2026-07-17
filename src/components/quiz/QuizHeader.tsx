@@ -31,11 +31,11 @@ export function QuizHeader({
     <header className="grid min-h-[115px] grid-cols-[1fr_1.2fr_1fr] items-center gap-8 border-b border-[#ECEEFF] px-[60px] py-[24px] max-lg:grid-cols-1 max-lg:gap-6 max-lg:py-6">
       {/* Left — Quiz Name */}
       <div className="min-w-0 max-lg:text-center">
-        <p className="font-poppins text-[13px] font-medium text-[#2945FF]">
+        <p className="font-poppins text-[17px] font-medium text-[#2533F1]">
           Quiz Name
         </p>
         <h1
-          className="mt-2 max-w-[280px] truncate font-poppins text-[16px] font-medium text-[#111111] max-lg:mx-auto"
+          className="mt-2  truncate font-poppins text-[20px] font-semibold text-black"
           title={quizTitle}
         >
           {quizTitle}
@@ -55,7 +55,7 @@ export function QuizHeader({
               <polyline points="15 18 9 12 15 6" />
             </svg>
           </button>
-          <span className="text-[13px] font-medium text-[#111111]">
+          <span className="text-[17px] font-medium text-black">
             {currentQuestion} of {totalQuestions}
           </span>
           <button
@@ -76,7 +76,7 @@ export function QuizHeader({
             style={{ width: `${percentage}%` }}
           />
         </div>
-        <p className="mt-1 text-[11px] text-[#6B7280]">
+        <p className="mt-1 text-[15px] text-[#6B7280]">
           {percentage}%
         </p>
       </div>

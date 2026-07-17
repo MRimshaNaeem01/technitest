@@ -7,7 +7,9 @@ import { Heart } from "lucide-react";
 import { QuizHeader } from "@/components/quiz/QuizHeader";
 import { QuestionRenderer } from "@/components/quiz/QuestionRenderer";
 import { QuizPagination } from "@/components/quiz/QuizPagination";
+import { QuizSubmitConfirmation } from "@/components/quiz/quiz-submit-confirmation";
 import { getQuizBySlug } from "@/data/quiz";
+import type { QuizResult } from "@/types/quiz";
 
 type QuizAttemptPageProps = {
   params: Promise<{ slug: string }>;
@@ -30,6 +32,7 @@ export default function QuizAttemptPage({ params }: QuizAttemptPageProps) {
     new Set()
   );
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [showSubmitConfirmation, setShowSubmitConfirmation] = useState(false);
 
   if (!quiz) {
     return (
@@ -101,12 +104,50 @@ export default function QuizAttemptPage({ params }: QuizAttemptPageProps) {
     });
   };
 
-  const handleSubmit = () => {
+  const submitQuiz = () => {
+    const totalQuestions = quiz.questions.length;
+    const correctAnswers = quiz.questions.filter(
+      (q) => selectedAnswers[q.id] === q.correctAnswer
+    ).length;
+    const skippedQuestions = totalQuestions - answeredCount;
+    const incorrectAnswers = answeredCount - correctAnswers;
+    const pct = Math.round((correctAnswers / totalQuestions) * 100);
+
+    const result: QuizResult = {
+      quizId: quiz.id,
+      quizSlug: slug,
+      quizName: quiz.title,
+      level: quiz.level,
+      category: quiz.category,
+      totalQuestions,
+      correctAnswers,
+      incorrectAnswers,
+      skippedQuestions,
+      percentage: pct,
+      passed: pct >= 60,
+      durationSeconds: 0,
+      dateTaken: new Date().toISOString(),
+      attemptsTaken: 1,
+      attemptsRemaining: 2,
+      answers: selectedAnswers,
+    };
+
+    sessionStorage.setItem(`quiz-result-${slug}`, JSON.stringify(result));
     setIsSubmitted(true);
+    setShowSubmitConfirmation(false);
+    router.push(`/quiz/${slug}/result`);
+  };
+
+  const handleSubmit = () => {
+    if (answeredCount < quiz.questions.length) {
+      setShowSubmitConfirmation(true);
+    } else {
+      submitQuiz();
+    }
   };
 
   return (
-    <div className="min-h-screen bg-[#F6F7FF] px-10 py-8">
+    <div className=" bg-[#F6F7FF] h-[800px] px-10 py-8">
       <div className="w-full overflow-hidden rounded-[16px] bg-white shadow-sm">
         {/* Header */}
         <QuizHeader
@@ -122,47 +163,55 @@ export default function QuizAttemptPage({ params }: QuizAttemptPageProps) {
           isTimerLocked={isExpired || isSubmitted}
         />
 
-        {/* Question Area */}
-        <main className="relative mx-auto w-full max-w-[720px] px-6 pb-[65px] pt-[64px]">
-          {/* Bookmark */}
-          <button
-            onClick={handleToggleBookmark}
-            aria-label={isBookmarked ? "Remove bookmark" : "Bookmark question"}
-            className="absolute right-[-80px] top-[38px] flex h-[42px] w-[42px] items-center justify-center rounded-full bg-white shadow-[0_4px_14px_rgba(0,0,0,0.08)] transition-shadow hover:shadow-[0_6px_20px_rgba(0,0,0,0.12)] max-lg:hidden"
-          >
-            <Heart
-              className={`h-5 w-5 transition-colors ${
-                isBookmarked
-                  ? "fill-brand text-brand"
-                  : "text-gray-800"
-              }`}
+        {/* Main Content */}
+        {showSubmitConfirmation ? (
+          <div className="border-t border-[#ECEEFF]">
+            <QuizSubmitConfirmation
+              answeredQuestions={answeredCount}
+              totalQuestions={quiz.questions.length}
+              onProceed={submitQuiz}
             />
-          </button>
+          </div>
+        ) : !isSubmitted ? (
+          <main className="relative mx-auto w-full max-w-[720px] px-6 pb-[65px] pt-[64px]">
+            {/* Bookmark */}
+            <button
+              onClick={handleToggleBookmark}
+              aria-label={isBookmarked ? "Remove bookmark" : "Bookmark question"}
+              className="absolute right-[-80px] top-[38px] flex h-[42px] w-[42px] items-center justify-center rounded-full bg-white shadow-[0_4px_14px_rgba(0,0,0,0.08)] transition-shadow hover:shadow-[0_6px_20px_rgba(0,0,0,0.12)] max-lg:hidden"
+            >
+              <Heart
+                className={`h-5 w-5 transition-colors ${
+                  isBookmarked
+                    ? "fill-brand text-brand"
+                    : "text-gray-800"
+                }`}
+              />
+            </button>
 
-          {/* Mobile bookmark */}
-          <button
-            onClick={handleToggleBookmark}
-            aria-label={isBookmarked ? "Remove bookmark" : "Bookmark question"}
-            className="absolute right-6 top-6 flex h-[42px] w-[42px] items-center justify-center rounded-full bg-white shadow-[0_4px_14px_rgba(0,0,0,0.08)] lg:hidden"
-          >
-            <Heart
-              className={`h-5 w-5 transition-colors ${
-                isBookmarked
-                  ? "fill-brand text-brand"
-                  : "text-gray-800"
-              }`}
+            {/* Mobile bookmark */}
+            <button
+              onClick={handleToggleBookmark}
+              aria-label={isBookmarked ? "Remove bookmark" : "Bookmark question"}
+              className="absolute right-6 top-6 flex h-[42px] w-[42px] items-center justify-center rounded-full bg-white shadow-[0_4px_14px_rgba(0,0,0,0.08)] lg:hidden"
+            >
+              <Heart
+                className={`h-5 w-5 transition-colors ${
+                  isBookmarked
+                    ? "fill-brand text-brand"
+                    : "text-gray-800"
+                }`}
+              />
+            </button>
+
+            <QuestionRenderer
+              question={currentQuestion}
+              selectedAnswer={selectedAnswer}
+              onSelect={handleSelectAnswer}
+              isLocked={isExpired}
             />
-          </button>
 
-          <QuestionRenderer
-            question={currentQuestion}
-            selectedAnswer={selectedAnswer}
-            onSelect={handleSelectAnswer}
-            isLocked={isExpired || isSubmitted}
-          />
-
-          {/* Actions */}
-          {!isSubmitted && (
+            {/* Actions */}
             <div className="mt-12 flex items-center gap-4">
               <button
                 onClick={handleSkip}
@@ -188,41 +237,8 @@ export default function QuizAttemptPage({ params }: QuizAttemptPageProps) {
                 </button>
               )}
             </div>
-          )}
-
-          {/* Submission Result */}
-          {isSubmitted && (
-            <div className="mt-12 rounded-2xl bg-[#F8F8FF] p-8 text-center">
-              <h2 className="mb-2 text-lg font-bold text-gray-900">
-                Quiz Submitted!
-              </h2>
-              <p className="mb-6 text-sm text-gray-500">
-                You answered {answeredCount} out of {quiz.questions.length}{" "}
-                questions.
-              </p>
-              <div className="flex justify-center gap-3">
-                <button
-                  onClick={() => router.push("/")}
-                  className="rounded-full border-2 border-gray-200 px-6 py-2.5 text-sm font-medium text-gray-600 hover:bg-gray-50"
-                >
-                  Go Home
-                </button>
-                <button
-                  onClick={() => {
-                    setCurrentIndex(0);
-                    setSelectedAnswers({});
-                    setBookmarkedQuestions(new Set());
-                    setExpiredQuestions(new Set());
-                    setIsSubmitted(false);
-                  }}
-                  className="rounded-full bg-brand px-6 py-2.5 text-sm font-medium text-white hover:bg-brand-hover"
-                >
-                  Retake Quiz
-                </button>
-              </div>
-            </div>
-          )}
-        </main>
+          </main>
+        ) : null}
 
         {/* Pagination Footer */}
         <div className="border-t border-[#DDE1FF] px-8 py-[26px] text-center">

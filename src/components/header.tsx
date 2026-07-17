@@ -43,10 +43,10 @@ export function Header() {
 
             <Link
               href="/verify-certificate"
-              className="hidden items-center gap-1 text-sm font-medium text-brand-link hover:underline md:flex"
+              className="hidden items-center gap-1 text-[17px] font-medium text-brand-link hover:underline md:flex"
             >
               Verify Certificate
-              <ExternalLink className="size-3.5" />
+              <ExternalLink className="size-4" />
             </Link>
 
             <button

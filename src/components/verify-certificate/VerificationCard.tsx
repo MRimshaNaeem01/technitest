@@ -9,7 +9,7 @@ export function VerificationCard({ children, className }: VerificationCardProps)
   return (
     <div
       className={cn(
-        "flex flex-col rounded-2xl bg-white p-8 shadow-[0_4px_24px_rgba(0,0,0,0.06)]",
+        "flex flex-col rounded-2xl bg-white p-6 shadow-[0_4px_24px_rgba(0,0,0,0.06)]",
         className
       )}
     >

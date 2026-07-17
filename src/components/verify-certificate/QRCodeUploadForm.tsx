@@ -2,7 +2,7 @@
 
 import { useCallback, useRef, useState } from "react";
 import Image from "next/image";
-import { QrCode, Upload, X } from "lucide-react";
+import { Upload, X } from "lucide-react";
 
 import { VerificationCard } from "./VerificationCard";
 
@@ -12,7 +12,6 @@ type QRCodeUploadFormProps = {
 };
 
 const ACCEPTED_TYPES = ["image/png", "image/jpeg", "image/jpg"];
-const MAX_SIZE = 5 * 1024 * 1024; // 5MB
 
 export function QRCodeUploadForm({ onVerify, loading }: QRCodeUploadFormProps) {
   const inputRef = useRef<HTMLInputElement>(null);
@@ -25,10 +24,6 @@ export function QRCodeUploadForm({ onVerify, loading }: QRCodeUploadFormProps) {
     setError("");
     if (!ACCEPTED_TYPES.includes(f.type)) {
       setError("Please upload a .png, .jpg, or .jpeg file");
-      return;
-    }
-    if (f.size > MAX_SIZE) {
-      setError("File size must be less than 5MB");
       return;
     }
     setFile(f);
@@ -75,19 +70,29 @@ export function QRCodeUploadForm({ onVerify, loading }: QRCodeUploadFormProps) {
   };
 
   return (
-    <VerificationCard className="flex-1">
-      <div className="mb-6 flex justify-center">
-        <div className="flex h-[140px] w-[140px] items-center justify-center rounded-2xl bg-[#F0F0FF]">
-          <QrCode className="h-16 w-16 text-[#2F45FF]" strokeWidth={1.2} />
+    <VerificationCard className="flex-1 p-20">
+      <div className="mb-5 flex justify-center">
+        <div className="relative mx-auto h-[110px] w-[170px]">
+          <Image
+            src="/verify-certificate/verify-qr-left.png"
+            alt=""
+            className="absolute left-2 top-5 -rotate-6"
+            width={90}
+            height={90}
+          />
+          <Image
+            src="/verify-certificate/verify-qr-right.png"
+            alt="Verify certificate by QR code"
+            className="absolute right-2 top-0 rotate-6"
+            width={95}
+            height={95}
+          />
         </div>
       </div>
 
-      <h3 className="mb-2 text-center text-xl font-semibold text-[#111]">
+      <h3 className="mb-10 text-center font-poppins text-[30px] font-medium text-black">
         Verify by QR Code
       </h3>
-      <p className="mb-6 text-center text-sm text-[#666]">
-        Upload an image of the QR code from your certificate.
-      </p>
 
       <form onSubmit={handleSubmit} className="flex flex-1 flex-col">
         <input
@@ -110,10 +115,10 @@ export function QRCodeUploadForm({ onVerify, loading }: QRCodeUploadFormProps) {
               />
             </div>
             <div className="min-w-0 flex-1">
-              <p className="truncate text-sm font-medium text-[#111]">
+              <p className="truncate font-poppins text-[14px] font-medium text-[#111]">
                 {file?.name}
               </p>
-              <p className="text-xs text-[#999]">
+              <p className="font-poppins text-[12px] text-[#999]">
                 {file ? `${(file.size / 1024).toFixed(1)} KB` : ""}
               </p>
             </div>
@@ -131,26 +136,21 @@ export function QRCodeUploadForm({ onVerify, loading }: QRCodeUploadFormProps) {
             onDragOver={handleDragOver}
             onDragLeave={handleDragLeave}
             onClick={() => inputRef.current?.click()}
-            className={`mb-4 flex cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-dashed p-8 transition-colors ${
-              isDragOver
-                ? "border-[#2F45FF] bg-[#F0F0FF]"
-                : "border-[#E2E2E8] bg-[#FAFAFA] hover:border-[#2F45FF] hover:bg-[#F5F5FF]"
+            className={`mb-4 flex cursor-pointer flex-col items-center justify-center rounded-lg bg-[#F9F9FB] py-6 transition-colors ${
+              isDragOver ? "bg-[#F0F0FF]" : "hover:bg-[#F5F5FF]"
             }`}
           >
-            <Upload className="mb-3 size-8 text-[#A0A0AA]" />
-            <p className="text-sm font-medium text-[#111]">
-              Drag & drop your QR code here
+            <Upload className="mb-2 size-5 text-[#A0A0AA]" />
+            <p className="font-poppins text-[13px] font-medium text-[#111]">
+              Upload or Drag and Drop
             </p>
-            <p className="mt-1 text-xs text-[#999]">or</p>
+            <p className="mt-0.5 font-poppins text-[11px] text-[#999]">or</p>
             <button
               type="button"
-              className="mt-2 text-sm font-medium text-[#2F45FF] hover:underline"
+              className="mt-1.5 rounded-full bg-white px-4 py-1 font-poppins text-[12px] font-medium text-[#2F45FF] shadow-sm hover:underline"
             >
               Browse Files
             </button>
-            <p className="mt-2 text-xs text-[#999]">
-              Accepted: .png, .jpg, .jpeg (max 5MB)
-            </p>
           </div>
         )}
 
@@ -158,11 +158,11 @@ export function QRCodeUploadForm({ onVerify, loading }: QRCodeUploadFormProps) {
           <p className="mb-2 text-xs text-red-500">{error}</p>
         )}
 
-        <div className="mt-auto pt-4">
+        <div className="mt-2">
           <button
             type="submit"
             disabled={loading || !file}
-            className="w-full rounded-lg bg-[#2F45FF] px-6 py-3.5 text-sm font-medium text-white transition-colors hover:bg-[#1a30e0] disabled:cursor-not-allowed disabled:opacity-50"
+            className="w-full rounded-full bg-[#2F45FF] px-6 py-3 font-poppins text-[14px] font-medium text-white transition-colors hover:bg-[#1a30e0] disabled:cursor-not-allowed disabled:opacity-50"
           >
             {loading ? "Verifying..." : "Verify Certificate"}
           </button>

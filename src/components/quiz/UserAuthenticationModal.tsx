@@ -38,11 +38,11 @@ export function UserAuthenticationModal({
       role="dialog"
       aria-modal="true"
       aria-labelledby="user-auth-title"
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-4"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4"
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-[460px] rounded-2xl bg-white p-8 shadow-2xl"
+        className="relative w-full max-w-[600px] rounded-2xl bg-white p-8 shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
         <button
@@ -61,12 +61,12 @@ export function UserAuthenticationModal({
 
         <h2
           id="user-auth-title"
-          className="mb-4 text-center text-[20px] font-bold text-[#111111]"
+          className="mb-4 text-center text-[32px] font-semibold text-black"
         >
           User Authentication
         </h2>
 
-        <p className="mb-8 text-center text-sm leading-relaxed text-gray-500">
+        <p className="mb-8 text-center text-lg leading-relaxed text-black my-2">
           Before starting the quiz, turn on your camera and slowly rotate your
           head in all directions for face verification. The system will capture a
           few images and prompt you to upload or scan your ID. Once verification

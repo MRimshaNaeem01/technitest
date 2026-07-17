@@ -17,7 +17,7 @@ export function QuestionRenderer({
 }: QuestionRendererProps) {
   return (
     <div>
-      <p className="max-w-[620px] font-poppins text-[20px] font-medium leading-[1.45] text-[#111111]">
+      <p className="max-w-[620px] font-poppins text-[26px] font-medium leading-[1.45] text-black">
         {question.question}
       </p>
 
@@ -28,7 +28,7 @@ export function QuestionRenderer({
           return (
             <label
               key={option.id}
-              className={`flex cursor-pointer items-center gap-5 font-poppins text-[16px] font-normal text-[#111111] transition-colors ${
+              className={`flex cursor-pointer items-center gap-5 font-poppins text-[20px] font-medium text-black transition-colors ${
                 isLocked ? "cursor-not-allowed opacity-60" : ""
               }`}
             >
@@ -47,7 +47,7 @@ export function QuestionRenderer({
       </div>
 
       {isLocked && (
-        <p className="mt-5 text-center text-[12px] font-normal text-[#FF2D3D]">
+        <p className="mt-5 text-center text-[16px] font-normal text-[#FF2D3D]">
           Time expired for this question.
         </p>
       )}

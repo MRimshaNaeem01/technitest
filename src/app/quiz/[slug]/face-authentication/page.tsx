@@ -29,7 +29,7 @@ export default function FaceAuthenticationPage({ params }: FaceAuthPageProps) {
           <ArrowLeft className="size-8" />
         </button>
 
-        <h1 className="mb-2 text-center font-urbanist text-[48px] font-bold leading-tight text-[#111827]">
+        <h1 className="mb-2 text-center font-urbanist text-[40px] font-semibold leading-tight text-black">
           Face Authentication
         </h1>
 
