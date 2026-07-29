@@ -71,7 +71,7 @@ export function QuizPagination({
 
   return (
     <div className="flex flex-col items-center">
-      <div className="flex items-center justify-center gap-[6px]">
+      <div className="flex flex-wrap items-center justify-center gap-[4px] sm:gap-[6px]">
         <button
           onClick={onPrevious}
           disabled={currentQuestionIndex <= 0}

@@ -1,5 +1,25 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Page Not Found | Technitest",
+  description:
+    "The page you are looking for does not exist or has been moved. Return to the Technitest homepage to continue learning.",
+  openGraph: {
+    title: "Page Not Found | Technitest",
+    description: "The page you are looking for does not exist or has been moved.",
+    type: "website",
+  },
+  keywords: [
+    "404",
+    "page not found",
+    "Technitest",
+    "broken link",
+    "missing page",
+    "error page",
+  ],
+};
 
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";

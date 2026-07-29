@@ -21,7 +21,7 @@ type CategoryQuizListProps = {
 
 export function CategoryQuizList({ quizzes }: CategoryQuizListProps) {
   return (
-    <div className="flex-1">
+    <div className="min-w-0 flex-1">
       <div className="grid gap-6 sm:grid-cols-2">
         {quizzes.map((quiz) => {
           const card = (
@@ -40,7 +40,7 @@ export function CategoryQuizList({ quizzes }: CategoryQuizListProps) {
               </div>
               <div className="px-4 pb-5 pt-4">
                 <div className="mb-1 flex items-start justify-between">
-                  <h3 className="text-[18px] font-semibold text-[#111111]">
+                  <h3 className="min-w-0 text-[16px] font-semibold text-[#111111] md:text-[18px]">
                     {quiz.title}
                   </h3>
                   <span className="flex shrink-0 items-center gap-1 text-sm font-medium text-brand">

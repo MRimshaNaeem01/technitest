@@ -214,7 +214,7 @@ export default function QuizAttemptPage({ params }: QuizAttemptPageProps) {
                 />
 
                 {/* Actions */}
-                <div className="mt-10 flex items-center gap-3">
+                <div className="mt-10 flex flex-wrap items-center gap-3">
                   <button
                     onClick={handleSkip}
                     disabled={currentIndex >= quiz.questions.length - 1}

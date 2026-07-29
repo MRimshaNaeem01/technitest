@@ -114,7 +114,7 @@ export function FaceAuthenticationCamera({
       </div>
 
       {/* Instruction Text */}
-      <p className="mb-10  text-center font-poppins text-[20px] font-medium leading-relaxed text-black">
+      <p className="mb-10 text-center font-poppins text-[16px] font-medium leading-relaxed text-black sm:text-[20px]">
         Turn your head slowly in all direction for face verification
       </p>
 

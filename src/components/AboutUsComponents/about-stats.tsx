@@ -11,19 +11,23 @@ type AboutStatsProps = {
 
 export function AboutStats({ stats }: AboutStatsProps) {
   return (
-    <section className="bg-white pb-20">
+    <section className="bg-white pb-10 pt-4 sm:pb-16 sm:pt-6 lg:pb-20">
       <Container>
-        <div className="flex flex-wrap justify-center text-center">
+        <div className="grid grid-cols-2 gap-y-8 sm:grid-cols-4 sm:gap-y-0">
           {stats.map((stat, i) => (
-            <div key={stat.label} className="flex items-center">
-              <div className="px-8 py-4 sm:px-12">
-                <p className="text-[40px] font-bold leading-none text-[#111111]">
-                  {stat.value}
-                </p>
-                <p className="mt-2 type-label">{stat.label}</p>
-              </div>
+            <div
+              key={stat.label}
+              className="relative flex flex-col items-center px-4 text-center sm:px-6"
+            >
+              <p className="text-[28px] font-bold leading-none text-[#111111] sm:text-[40px]">
+                {stat.value}
+              </p>
+              <p className="mt-2 type-label text-[#111111]">{stat.label}</p>
               {i < stats.length - 1 && (
-                <div className="hidden h-12 w-px bg-gray-300 sm:block" />
+                <div
+                  aria-hidden
+                  className="absolute right-0 top-1/2 hidden h-12 w-px -translate-y-1/2 bg-[#D9D9DE] sm:block"
+                />
               )}
             </div>
           ))}

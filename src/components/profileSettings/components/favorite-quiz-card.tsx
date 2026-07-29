@@ -19,7 +19,7 @@ export function FavoriteQuizCard({
   return (
     <div className="flex flex-col overflow-hidden rounded-[6px] border border-[#E7E9F5] bg-white">
       {/* Image */}
-      <div className="relative h-[160px] w-full shrink-0">
+      <div className="relative h-[140px] w-full shrink-0 sm:h-[160px]">
         <Image
           src={quiz.image}
           alt={quiz.title}

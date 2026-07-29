@@ -10,8 +10,8 @@ export function CategoryInnerHero({
   description,
 }: CategoryInnerHeroProps) {
   return (
-    <section className="relative flex min-h-[260px] items-center justify-center overflow-hidden bg-[#F7F7FF]">
-      <div className="py-14 text-center">
+    <section className="relative flex min-h-[200px] items-center justify-center overflow-hidden bg-[#F7F7FF] md:min-h-[260px]">
+      <div className="px-4 py-10 text-center md:px-6 md:py-14">
         <div className="mb-4">{breadcrumb}</div>
         <h1 className="type-page text-[36px] md:text-[48px]">
           {title}

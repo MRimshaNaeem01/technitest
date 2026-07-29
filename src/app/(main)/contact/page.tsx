@@ -1,5 +1,26 @@
+import type { Metadata } from "next";
 import { BannerBreadcrumb } from "@/components/common/BannerBreadcrumb";
 import { ContactHero } from "@/components/contactComponents/contact-hero";
+
+export const metadata: Metadata = {
+  title: "Contact Us | Technitest",
+  description:
+    "Get in touch with the Technitest team. Reach out for support, sales inquiries, or any questions about our quizzes and certification platform.",
+  openGraph: {
+    title: "Contact Us | Technitest",
+    description:
+      "Get in touch with the Technitest team for support, sales, or questions about our platform.",
+    type: "website",
+  },
+  keywords: [
+    "contact Technitest",
+    "support",
+    "customer service",
+    "quiz platform help",
+    "get in touch",
+    "Technitest contact",
+  ],
+};
 import { ContactInfoCards } from "@/components/contactComponents/contact-info-cards";
 import { ContactForm } from "@/components/contactComponents/contact-form";
 

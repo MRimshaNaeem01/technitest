@@ -1,4 +1,25 @@
+import type { Metadata } from "next";
 import { Container } from "@/components/common/container";
+
+export const metadata: Metadata = {
+  title: "Dashboard | Technitest",
+  description:
+    "View your quiz progress, track completed tests, and manage your learning journey from the Technitest dashboard.",
+  openGraph: {
+    title: "Dashboard | Technitest",
+    description:
+      "View your quiz progress and manage your learning journey from the Technitest dashboard.",
+    type: "website",
+  },
+  keywords: [
+    "dashboard",
+    "quiz progress",
+    "learning dashboard",
+    "Technitest dashboard",
+    "track progress",
+    "user dashboard",
+  ],
+};
 import {
   Card,
   CardContent,

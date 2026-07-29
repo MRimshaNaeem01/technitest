@@ -29,7 +29,7 @@ export function QuizInfoCard({
   return (
     <section className="relative bg-white pb-20 pt-8">
       <Container>
-        <div className="rounded-xl bg-white p-8 shadow-sm">
+        <div className="rounded-xl bg-white p-4 shadow-sm sm:p-8">
           <p className="mb-2 text-xs font-medium uppercase tracking-wider text-gray-400">
             {label}
           </p>

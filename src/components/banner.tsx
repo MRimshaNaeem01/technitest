@@ -26,22 +26,22 @@ export function Banner({
   const hasImage = Boolean(imageSrc);
 
   return (
-    <section className="py-10">
+    <section className="py-8 sm:py-10">
       <Container>
         <div
-          className={`grid items-center gap-10 ${hasImage ? "lg:grid-cols-2" : "place-items-center text-center"
+          className={`grid items-center gap-6 sm:gap-10 ${hasImage ? "lg:grid-cols-2" : "place-items-center text-center"
             }`}
         >
           {/* Left Content */}
-          <div className={hasImage ? "max-w-xl" : "max-w-3xl"}>
+          <div className={`min-w-0 ${hasImage ? "max-w-xl" : "max-w-3xl"}`}>
             {badge && (
-            <div className="relative inline-flex items-center justify-center mb-4">
+            <div className="relative mb-4 inline-flex items-center justify-center">
             <div className="absolute -left-5 top-1/2 h-11 w-8 -translate-y-1/2 bg-[#EEF0FF] rounded-xl [clip-path:polygon(0_0,100%_0,72%_50%,100%_100%,0_100%,28%_50%)]" />
           
-            <div className="relative z-10 flex h-[62px] items-center gap-3 bg-white px-10 shadow-[0_12px_35px_rgba(31,41,55,0.08)]">
-              <span className="text-[28px] leading-none">🏆</span>
+            <div className="relative z-10 flex h-12 sm:h-[62px] items-center gap-2 sm:gap-3 bg-white px-5 sm:px-10 shadow-[0_12px_35px_rgba(31,41,55,0.08)]">
+              <span className="text-xl sm:text-[28px] leading-none">🏆</span>
           
-              <span className="font-poppins whitespace-nowrap text-[18px] font-normal leading-none text-black">
+              <span className="font-poppins whitespace-normal sm:whitespace-nowrap text-[13px] sm:text-[18px] font-normal leading-none text-black">
                {badge}
               </span>
             </div>
@@ -50,7 +50,7 @@ export function Banner({
           </div>
             )}
 
-            <h1 className="max-w-[700px] font-urbanist text-[50px] font-medium leading-[62px] tracking-normal text-[#0F172A]">
+            <h1 className="max-w-[700px] font-urbanist type-hero font-medium leading-tight sm:leading-[62px] tracking-normal text-[#0F172A]">
               {title}{" "}
               {highlightedText && (
                 <span className="font-semibold text-[#2945FF]">
@@ -60,24 +60,24 @@ export function Banner({
             </h1>
 
             {description && (
-              <p className="mt-6 max-w-[620px] font-poppins text-[20px] font-normal leading-[36px] tracking-normal text-[#3F3F46]">
+              <p className="mt-4 sm:mt-6 max-w-[620px] font-poppins type-body-lg font-normal leading-relaxed sm:leading-[36px] tracking-normal text-[#3F3F46]">
                 {description}
               </p>
             )}
 
             {buttonText && (
-              <div className="mt-7 flex items-center gap-5">
+              <div className="mt-5 sm:mt-7 flex flex-wrap items-center gap-4 sm:gap-5">
                 <AppButton
                   href={buttonHref}
-                  className="h-14 rounded-full bg-[#2F43F4] px-8 font-poppins text-lg font-medium text-white shadow-md transition-all hover:bg-[#2538CC] hover:shadow-lg"
+                  className="h-12 sm:h-14 rounded-full bg-[#2F43F4] px-6 sm:px-8 font-poppins text-base sm:text-lg font-medium text-white shadow-md transition-all hover:bg-[#2538CC] hover:shadow-lg"
                 >
                   {buttonText}
                 </AppButton>
 
                 {hasImage && (
-                  <div className="flex items-center">
+                  <div className="flex items-center min-w-0">
                     <div className="flex items-center">
-                      <div className="relative h-12 w-12 overflow-hidden rounded-full border-[3px] border-white shadow-sm">
+                      <div className="relative h-10 w-10 sm:h-12 sm:w-12 overflow-hidden rounded-full border-[3px] border-white shadow-sm">
                         <Image
                           src="/user1.png"
                           alt="User 1"
@@ -86,7 +86,7 @@ export function Banner({
                           sizes="48px"
                         />
                       </div>
-                      <div className="relative -ml-4 h-12 w-12 overflow-hidden rounded-full border-[3px] border-white shadow-sm">
+                      <div className="relative -ml-4 h-10 w-10 sm:h-12 sm:w-12 overflow-hidden rounded-full border-[3px] border-white shadow-sm">
                         <Image
                           src="/user2.png"
                           alt="User 2"
@@ -95,7 +95,7 @@ export function Banner({
                           sizes="48px"
                         />
                       </div>
-                      <div className="relative -ml-4 h-12 w-12 overflow-hidden rounded-full border-[3px] border-white shadow-sm">
+                      <div className="relative -ml-4 h-10 w-10 sm:h-12 sm:w-12 overflow-hidden rounded-full border-[3px] border-white shadow-sm">
                         <Image
                           src="/user3.png"
                           alt="User 3"
@@ -105,7 +105,7 @@ export function Banner({
                         />
                       </div>
                     </div>
-                    <p className="ml-3 whitespace-nowrap font-poppins text-sm text-[#111827]">
+                    <p className="ml-2 sm:ml-3 whitespace-nowrap font-poppins text-xs sm:text-sm text-[#111827]">
                       <span className="font-bold">24k+</span>{" "}
                       <span className="font-medium">Happy Students</span>
                     </p>

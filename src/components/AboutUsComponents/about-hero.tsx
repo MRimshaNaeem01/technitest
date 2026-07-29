@@ -13,7 +13,7 @@ export function AboutHero({
 }: AboutHeroProps) {
   return (
     <section className="relative flex min-h-[330px] items-center justify-center overflow-hidden bg-[#F5F5FF]">
-      <div className="py-16 text-center">
+      <div className="py-10 sm:py-16 text-center">
         {breadcrumb && (
           <div className="mb-6">{breadcrumb}</div>
         )}

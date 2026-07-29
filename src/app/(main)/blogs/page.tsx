@@ -96,10 +96,10 @@ export default function BlogsPage() {
       </section>
 
       {/* Blog Grid Section */}
-      <section className="py-16">
+      <section className="py-10 sm:py-16">
         <Container>
           {/* Section heading */}
-          <div className="mb-12">
+          <div className="mb-8 sm:mb-12">
             <p className="mb-2 text-sm font-medium text-brand">
               Latest From Our Blog
             </p>

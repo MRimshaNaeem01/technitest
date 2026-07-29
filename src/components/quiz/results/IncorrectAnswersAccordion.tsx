@@ -52,7 +52,7 @@ export function IncorrectAnswersAccordion({
               <div
                 key={q.id}
                 className={cn(
-                  "py-4",
+                  "min-w-0 py-4",
                   idx > 0 && "border-t border-gray-50"
                 )}
               >

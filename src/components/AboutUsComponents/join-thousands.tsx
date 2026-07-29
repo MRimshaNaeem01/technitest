@@ -23,10 +23,10 @@ export function JoinThousands({
   imageAlt = "Community image",
 }: JoinThousandsProps) {
   return (
-    <section className="bg-[#F7F7FF] py-24">
+    <section className="bg-[#F7F7FF] py-10 sm:py-16 lg:py-24">
       <Container>
-        <div className="flex flex-col items-center gap-14 lg:flex-row">
-          <div className="shrink-0">
+        <div className="flex flex-col items-center gap-8 lg:flex-row lg:gap-14">
+          <div className="w-full shrink-0 max-w-[420px] lg:max-w-none">
             <Image
               src={imageSrc}
               alt={imageAlt}

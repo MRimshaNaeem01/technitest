@@ -1,4 +1,26 @@
+import type { Metadata } from "next";
 import { BannerBreadcrumb } from "@/components/common/BannerBreadcrumb";
+
+export const metadata: Metadata = {
+  title: "About Us | Technitest",
+  description:
+    "Learn about Technitest — our mission to make skill-based learning accessible and rewarding. Discover how we help learners earn certificates and track their progress.",
+  openGraph: {
+    title: "About Us | Technitest",
+    description:
+      "Learn about Technitest — our mission to make skill-based learning accessible and rewarding.",
+    type: "website",
+  },
+  keywords: [
+    "about Technitest",
+    "skill-based learning",
+    "online education platform",
+    "mission and vision",
+    "learning certificates",
+    "career growth",
+    "Technitest about",
+  ],
+};
 import { AboutHero } from "@/components/AboutUsComponents/about-hero";
 import { AboutIntro } from "@/components/AboutUsComponents/about-intro";
 import { AboutJourney } from "@/components/AboutUsComponents/about-journey";
@@ -9,9 +31,9 @@ import { JoinThousands } from "@/components/AboutUsComponents/join-thousands";
 import { Testimonials } from "@/components/testimonials";
 
 const stats = [
-  { value: "850K", label: "Quiz Courses" },
+  { value: "850K", label: "Free Courses" },
   { value: "85+", label: "Courses" },
-  { value: "8+", label: "Quiz Experiences" },
+  { value: "8+", label: "Experience" },
   { value: "10k", label: "Students Enrolled" },
 ];
 
@@ -123,7 +145,7 @@ export default function AboutPage() {
         description="We are dedicated to providing high-quality, skill-based quizzes that help learners grow, earn certificates, and achieve their goals."
       />
       <AboutIntro
-        title="Built For Learners, Backed By Vision"
+        title="Built for Learners, Backed by Vision"
         paragraphs={[
           "TechniTest is your go-to platform for smart, skill-based learning. We offer carefully crafted quizzes in IT, English, Business, and more — designed to help you grow, test yourself, and track your progress.",
           "Our mission is to make education accessible and practical. After completing a quiz, preview your customized certificate — and when you're ready, unlock it officially with a simple payment. It's learning with purpose, results, and recognition.",

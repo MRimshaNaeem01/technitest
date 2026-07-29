@@ -23,7 +23,7 @@ export function CustomFileUpload({ value, onChange }: CustomFileUploadProps) {
   };
 
   return (
-    <div className="flex items-center gap-4">
+    <div className="flex flex-wrap items-center gap-2 sm:gap-4">
       <input
         ref={inputRef}
         type="file"

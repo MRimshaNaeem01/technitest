@@ -12,7 +12,7 @@ export function QuizSubmitConfirmation({
   const unansweredCount = totalQuestions - answeredQuestions;
 
   return (
-    <div className="flex flex-1 flex-col items-center justify-center px-6 py-16">
+    <div className="flex flex-1 flex-col items-center justify-center px-4 py-10 sm:px-6 sm:py-16">
       <p className="text-center font-poppins text-[16px] font-medium text-[#111111]">
         You have not answered {unansweredCount} questions
       </p>

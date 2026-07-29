@@ -1,4 +1,27 @@
+import type { Metadata } from "next";
 import { AchievementBanner } from "@/components/achievement-banner";
+
+export const metadata: Metadata = {
+  title: "Technitest - Online Quiz & Certificate Platform",
+  description:
+    "Take skill-based online quizzes in IT, English, Business and more. Earn verified certificates, track your progress, and level up your career with Technitest.",
+  openGraph: {
+    title: "Technitest - Online Quiz & Certificate Platform",
+    description:
+      "Take skill-based online quizzes in IT, English, Business and more. Earn verified certificates and track your progress.",
+    type: "website",
+  },
+  keywords: [
+    "online quizzes",
+    "certificate platform",
+    "skill-based learning",
+    "IT quizzes",
+    "English quizzes",
+    "career development",
+    "online certification",
+    "Technitest",
+  ],
+};
 import { Banner } from "@/components/banner";
 import { HallOfAchievers } from "@/components/hall-of-achievers";
 import { HowItWorks } from "@/components/how-it-works";

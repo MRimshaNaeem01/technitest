@@ -18,7 +18,7 @@ export function MyQuizzesTab() {
   return (
     <div className="space-y-5">
       {/* Header */}
-      <div className="flex items-center justify-between">
+      <div className="flex flex-wrap items-center justify-between gap-3">
         <h3 className="font-poppins text-[18px] font-semibold text-[#0B0B0B]">
           My Quizzes
         </h3>

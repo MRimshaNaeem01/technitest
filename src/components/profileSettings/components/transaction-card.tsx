@@ -24,7 +24,7 @@ const statusStyles: Record<Transaction["status"], string> = {
 
 export function TransactionCard({ transaction }: { transaction: Transaction }) {
   return (
-    <div className="rounded-[6px] border border-[#E7E9F5] bg-white px-8 py-6">
+    <div className="rounded-[6px] border border-[#E7E9F5] bg-white px-4 py-4 sm:px-8 sm:py-6">
       {/* Top row: badges + refund status */}
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">

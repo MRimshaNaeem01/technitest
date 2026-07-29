@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Calendar, ChevronRight, User } from "lucide-react";
@@ -7,6 +8,32 @@ import { BlogHero } from "@/components/blogs/blog-hero";
 import { TableOfContents } from "@/components/blogs/table-of-contents";
 import { BlogSearch } from "@/components/blogs/blog-search";
 import { ProsConsSection } from "@/components/blogs/ProsConsSection";
+
+type Props = { params: Promise<{ slug: string }> };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const title = slug
+    .replace(/-/g, " ")
+    .replace(/\b\w/g, (c) => c.toUpperCase());
+  return {
+    title: `${title} | Technitest Blog`,
+    description: `Read ${title} on the Technitest blog. Tips, guides, and insights on online quizzes, certifications, and skill-based learning.`,
+    openGraph: {
+      title: `${title} | Technitest Blog`,
+      description: `Read ${title} on the Technitest blog. Tips, guides, and insights on online quizzes and certifications.`,
+      type: "article",
+    },
+    keywords: [
+      "Technitest blog",
+      "online quizzes",
+      "skill learning",
+      "certificates",
+      "career tips",
+      "blog post",
+    ],
+  };
+}
 
 const BLOG_POSTS = [
   {
@@ -341,7 +368,7 @@ export default async function BlogDetailPage({
     <>
       <BlogHero title={post.title} />
 
-      <div className="relative z-10 -mt-20">
+      <div className="relative z-10 -mt-12 md:-mt-20">
         <Container>
           <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl shadow-[0_8px_24px_rgba(0,0,0,0.08)]">
             <Image
@@ -356,9 +383,9 @@ export default async function BlogDetailPage({
         </Container>
       </div>
 
-      <section className="py-16">
+      <section className="py-10 sm:py-16">
         <Container>
-          <div className="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1fr)_340px]">
+          <div className="grid grid-cols-1 gap-6 sm:gap-10 lg:grid-cols-[minmax(0,1fr)_340px]">
             <article className="min-w-0">
               <div className="flex items-center gap-4 text-sm text-muted-foreground">
                 <span className="flex items-center gap-1.5">

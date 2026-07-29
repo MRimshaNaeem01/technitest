@@ -17,7 +17,7 @@ export function QuizNoteModal({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-4">
-      <div className="relative w-full max-w-[380px] rounded-2xl bg-white px-8 py-8 shadow-xl">
+      <div className="relative w-full max-w-[380px] rounded-2xl bg-white px-6 py-8 shadow-xl sm:px-8">
         <button
           onClick={onClose}
           className="absolute right-4 top-4 flex size-7 items-center justify-center rounded-full bg-gray-100 text-gray-500 hover:bg-gray-200"

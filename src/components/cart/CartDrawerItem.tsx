@@ -14,7 +14,7 @@ export function CartDrawerItem({ item }: CartDrawerItemProps) {
   const removeItem = useCartStore((s) => s.removeItem);
 
   return (
-    <div className="flex gap-4 px-6 py-5">
+    <div className="flex gap-3 px-4 py-4 sm:gap-4 sm:px-6 sm:py-5">
       {/* Radio */}
       <div className="flex shrink-0 items-start pt-4">
         <div className="h-4 w-4 rounded-full border-2 border-[#2945FF]" />

@@ -34,7 +34,7 @@ export function SavedPaymentCard({
   return (
     <div
       className={cn(
-        "rounded-[6px] border bg-white px-6 py-5",
+        "rounded-[6px] border bg-white px-4 py-4 sm:px-6 sm:py-5",
         method.isDefault ? "border-[#2945FF]" : "border-[#E7E9F5]"
       )}
     >
@@ -83,7 +83,7 @@ export function SavedPaymentCard({
       </div>
 
       {/* Actions row */}
-      <div className="mt-4 flex items-center gap-2 border-t border-[#F0F0F5] pt-4">
+      <div className="mt-4 flex flex-wrap items-center gap-2 border-t border-[#F0F0F5] pt-4">
         {!method.isDefault && (
           <button
             type="button"

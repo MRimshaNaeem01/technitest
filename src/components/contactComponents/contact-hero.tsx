@@ -6,8 +6,8 @@ type ContactHeroProps = {
 
 export function ContactHero({ breadcrumb, title, description }: ContactHeroProps) {
   return (
-    <section className="relative flex min-h-[300px] items-center justify-center overflow-hidden bg-[#F6F6FF]">
-      <div className="py-16 text-center">
+    <section className="relative flex min-h-[220px] items-center justify-center overflow-hidden bg-[#F6F6FF] md:min-h-[300px]">
+      <div className="px-4 py-10 text-center md:px-6 md:py-16">
         <div className="mb-4">{breadcrumb}</div>
         <h1 className="type-page text-[36px] md:text-[48px]">
           {title}

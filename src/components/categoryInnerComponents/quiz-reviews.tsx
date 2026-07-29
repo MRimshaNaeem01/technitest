@@ -1,5 +1,7 @@
 import { Star } from "lucide-react";
 
+import { Container } from "@/components/common/container";
+
 export type Review = {
   id: string;
   name: string;
@@ -15,10 +17,10 @@ type QuizReviewsProps = {
 
 export function QuizReviews({ reviews }: QuizReviewsProps) {
   return (
-    <section className="bg-white pb-20">
-      <div className="mx-auto w-full max-w-[1440px] px-8 xl:px-10 2xl:px-12">
-        <div className="rounded-xl bg-white p-8 shadow-sm">
-          <div className="mb-6 flex items-center justify-between">
+    <section className="bg-white pb-12 md:pb-20">
+      <Container>
+        <div className="rounded-xl bg-white p-4 shadow-sm sm:p-8">
+          <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <div className="flex items-center gap-3">
               <h2 className="text-xl font-semibold text-black">Reviews</h2>
               <span className="flex items-center gap-1 rounded-md bg-brand/10 px-3 py-1 text-sm font-medium text-brand">
@@ -66,7 +68,7 @@ export function QuizReviews({ reviews }: QuizReviewsProps) {
             ))}
           </div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

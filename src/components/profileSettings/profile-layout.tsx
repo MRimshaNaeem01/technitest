@@ -38,8 +38,8 @@ export function ProfileLayout() {
 
   return (
     <section className="bg-[#F6F7FF] py-10">
-      <Container className="max-w-[1280px] px-8 xl:px-12">
-        <h1 className="mb-6 font-poppins text-[24px] font-semibold text-[#0B0B0B]">
+      <Container className="max-w-[1280px] px-4 sm:px-8 xl:px-12">
+        <h1 className="mb-6 font-poppins text-[20px] font-semibold text-[#0B0B0B] sm:text-[24px]">
           Profile and Settings
         </h1>
 

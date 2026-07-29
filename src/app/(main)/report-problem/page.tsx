@@ -1,5 +1,26 @@
+import type { Metadata } from "next";
 import { BannerBreadcrumb } from "@/components/common/BannerBreadcrumb";
 import { ReportProblemForm } from "@/components/reportProblemComponents/report-problem-form";
+
+export const metadata: Metadata = {
+  title: "Report a Problem | Technitest",
+  description:
+    "Encountered an issue on Technitest? Report a problem and describe what went wrong so our team can resolve it promptly.",
+  openGraph: {
+    title: "Report a Problem | Technitest",
+    description:
+      "Report an issue on Technitest and help us resolve it quickly.",
+    type: "website",
+  },
+  keywords: [
+    "report problem",
+    "bug report",
+    "Technitest support",
+    "issue report",
+    "help",
+    "report issue",
+  ],
+};
 
 export default function ReportProblemPage() {
   return (
@@ -9,7 +30,7 @@ export default function ReportProblemPage() {
           <div className="mb-4">
             <BannerBreadcrumb currentPage="Report a Problem" />
           </div>
-          <h1 className="text-[34px] font-semibold leading-tight text-black">
+          <h1 className="text-[26px] font-semibold leading-tight text-black sm:text-[34px]">
             Report a Problem
           </h1>
           <p className="mx-auto mt-4 max-w-[620px] text-[#5F5F6B]">

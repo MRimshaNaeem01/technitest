@@ -142,7 +142,7 @@ export function MyProfileTab() {
   return (
     <div className="space-y-8">
       {/* Summary */}
-      <section className="rounded-xl bg-white p-6 shadow-[0_2px_12px_rgba(0,0,0,0.04)]">
+      <section className="rounded-xl bg-white p-4 shadow-[0_2px_12px_rgba(0,0,0,0.04)] sm:p-6">
         <div className="flex items-center justify-between">
           <h3 className="font-poppins text-[16px] font-semibold text-[#0B0B0B]">
             Summary
@@ -177,7 +177,7 @@ export function MyProfileTab() {
       </section>
 
       {/* Basic Info */}
-      <section className="rounded-xl bg-white p-6 shadow-[0_2px_12px_rgba(0,0,0,0.04)]">
+      <section className="rounded-xl bg-white p-4 shadow-[0_2px_12px_rgba(0,0,0,0.04)] sm:p-6">
         <h3 className="mb-5 font-poppins text-[16px] font-semibold text-[#0B0B0B]">
           Basic Information
         </h3>
@@ -253,7 +253,7 @@ export function MyProfileTab() {
       </section>
 
       {/* Change Password */}
-      <section className="rounded-xl bg-white p-6 shadow-[0_2px_12px_rgba(0,0,0,0.04)]">
+      <section className="rounded-xl bg-white p-4 shadow-[0_2px_12px_rgba(0,0,0,0.04)] sm:p-6">
         <h3 className="mb-5 font-poppins text-[16px] font-semibold text-[#0B0B0B]">
           Change Password
         </h3>

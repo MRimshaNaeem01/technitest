@@ -52,7 +52,7 @@ export function OtpInput({ value, onChange, error }: OtpInputProps) {
             value={digit}
             onChange={(e) => handleChange(i, e.target.value)}
             onKeyDown={(e) => handleKeyDown(i, e)}
-            className={`h-11 w-full max-w-[48px] rounded-lg border text-center text-lg font-semibold text-[#0B0B0B] outline-none transition-colors ${
+            className={`h-11 w-full max-w-[44px] rounded-lg border text-center text-lg font-semibold text-[#0B0B0B] outline-none transition-colors sm:max-w-[48px] ${
               error ? "border-red-500" : "border-gray-200 focus:border-[#EA9700]"
             }`}
           />

@@ -223,7 +223,7 @@ export function BillingForm({
                 <span className="text-sm font-medium text-[#111]">
                   {method.label}
                 </span>
-                <span className="text-sm text-[#777]">{method.number}</span>
+                <span className="hidden text-sm text-[#777] sm:inline">{method.number}</span>
               </div>
               <button
                 type="button"

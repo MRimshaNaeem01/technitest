@@ -26,14 +26,14 @@ export default function QuizCtaBanner({
 }: QuizCtaBannerProps) {
   return (
     <section
-      className="relative overflow-hidden"
-      style={{ backgroundColor, minHeight: "340px" }}
+      className="relative overflow-hidden min-h-[280px] sm:min-h-[340px]"
+      style={{ backgroundColor }}
     >
-      <div className="relative py-12 md:py-16 lg:py-0">
+      <div className="relative py-8 sm:py-12 md:py-16 lg:py-0">
         <Container>
           <div className="flex flex-col items-center text-center lg:flex-row lg:text-left">
             <div className="flex flex-1 flex-col items-center py-6 lg:items-start lg:py-16">
-              <h2 className="max-w-[650px] type-hero text-center text-[32px] font-medium md:text-[42px] lg:text-left">
+              <h2 className="max-w-[650px] type-hero text-center font-medium lg:text-left">
                 {title}
               </h2>
               {description && (

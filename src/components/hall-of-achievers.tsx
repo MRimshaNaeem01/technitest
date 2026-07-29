@@ -26,9 +26,9 @@ export function HallOfAchievers({
   achievers,
 }: HallOfAchieversProps) {
   return (
-    <section className="bg-[#F7F7FF] py-20">
+    <section className="bg-[#F7F7FF] py-10 sm:py-16 lg:py-20">
       <Container>
-        <div className="mx-auto mb-14 max-w-2xl text-center">
+        <div className="mx-auto mb-8 sm:mb-14 max-w-2xl text-center">
           {eyebrow && (
             <p className="mb-3 text-sm font-medium text-brand">{eyebrow}</p>
           )}
@@ -37,21 +37,21 @@ export function HallOfAchievers({
           </h2>
         </div>
 
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 sm:gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {achievers.map((achiever) => (
-            <div key={achiever.id} className="text-center sm:text-left">
+            <div key={achiever.id} className="min-w-0 text-center sm:text-left">
               <div className="overflow-hidden rounded-xl">
                 <Image
                   src={achiever.imageSrc}
                   alt={achiever.imageAlt ?? achiever.name}
                   width={400}
                   height={250}
-                  className="h-[250px] w-full object-cover"
+                  className="h-[200px] sm:h-[250px] w-full object-cover"
                 />
               </div>
 
-              <div className="mt-4 flex items-start justify-between">
-                <h3 className="text-[18px] font-semibold text-[#111111]">
+              <div className="mt-4 flex items-start justify-between gap-2">
+                <h3 className="type-card font-semibold text-[#111111] min-w-0 truncate">
                   {achiever.name}
                 </h3>
                 <span className="flex shrink-0 items-center gap-0.5">
@@ -68,7 +68,7 @@ export function HallOfAchievers({
                 {achiever.certificate}
               </p>
 
-              <div className="mt-3 flex items-center gap-3 type-small">
+              <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 type-small">
                 <span className="flex items-center gap-1">
                   <BarChart3 className="size-3.5" />
                   {achiever.level}

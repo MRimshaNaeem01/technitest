@@ -42,7 +42,7 @@ export function UserAuthenticationModal({
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-[600px] rounded-2xl bg-white p-8 shadow-2xl"
+        className="relative w-full max-w-[600px] rounded-2xl bg-white p-5 shadow-2xl sm:p-8"
         onClick={(e) => e.stopPropagation()}
       >
         <button
@@ -61,7 +61,7 @@ export function UserAuthenticationModal({
 
         <h2
           id="user-auth-title"
-          className="mb-4 text-center text-[32px] font-semibold text-black"
+          className="mb-4 text-center text-[24px] font-semibold text-black sm:text-[32px]"
         >
           User Authentication
         </h2>

@@ -20,7 +20,7 @@ export function FaqAccordion({ items }: FaqAccordionProps) {
   };
 
   return (
-    <div className="flex-1">
+    <div className="min-w-0 flex-1">
       {items.map((item, i) => (
         <div key={i}>
           <button

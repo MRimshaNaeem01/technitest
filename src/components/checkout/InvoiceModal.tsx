@@ -57,7 +57,7 @@ export function InvoiceModal({
       onClick={onClose}
     >
       <div
-        className="relative flex max-h-[90vh] w-full max-w-[1000px] flex-col overflow-hidden rounded-2xl bg-white shadow-2xl lg:flex-row"
+        className="relative flex max-h-[90vh] w-full max-w-[1000px] flex-col overflow-hidden rounded-2xl bg-white shadow-2xl sm:p-0 lg:flex-row"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close button */}
@@ -180,8 +180,8 @@ export function InvoiceModal({
           <hr className="my-4 border-gray-200" />
 
           {/* Items Table */}
-          <div className="mb-4">
-            <div className="mb-2 grid grid-cols-[2rem_1fr_auto] gap-2 text-xs font-medium text-[#777]">
+          <div className="mb-4 overflow-x-auto">
+            <div className="mb-2 grid min-w-[300px] grid-cols-[2rem_1fr_auto] gap-2 text-xs font-medium text-[#777]">
               <span>Sr</span>
               <span>Course / Quiz Name</span>
               <span className="text-right">Amount</span>
@@ -189,7 +189,7 @@ export function InvoiceModal({
             {items.map((item, idx) => (
               <div
                 key={item.id}
-                className="grid grid-cols-[2rem_1fr_auto] gap-2 py-2 text-sm"
+                className="grid min-w-[300px] grid-cols-[2rem_1fr_auto] gap-2 py-2 text-sm"
               >
                 <span className="text-[#777]">
                   {String(idx + 1).padStart(2, "0")}

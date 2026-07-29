@@ -10,7 +10,7 @@ export function CartDrawerHeader({ itemCount }: CartDrawerHeaderProps) {
   const closeDrawer = useCartStore((s) => s.closeDrawer);
 
   return (
-    <div className="flex h-[90px] shrink-0 items-center justify-between border-b border-[#ECECEC] px-6">
+    <div className="flex h-[90px] shrink-0 items-center justify-between border-b border-[#ECECEC] px-4 sm:px-6">
       <h2 className="text-lg font-semibold text-gray-900">
         {itemCount} {itemCount === 1 ? "item" : "items"} in cart
       </h2>

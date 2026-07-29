@@ -13,7 +13,7 @@ export function CertificateSection({ result }: CertificateSectionProps) {
       <div className="mb-6 overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-[0_2px_20px_rgba(0,0,0,0.06)]">
         <div className="relative bg-gradient-to-br from-[#F8F8FF] to-[#EEEEFF] px-8 py-12 text-center sm:px-16 sm:py-16">
           {/* Decorative corners */}
-          <div className="pointer-events-none absolute inset-0">
+          <div className="pointer-events-none absolute inset-0 hidden sm:block">
             <div className="absolute left-4 top-4 h-16 w-16 border-l-2 border-t-2 border-[#2F3CFF]/20" />
             <div className="absolute right-4 top-4 h-16 w-16 border-r-2 border-t-2 border-[#2F3CFF]/20" />
             <div className="absolute bottom-4 left-4 h-16 w-16 border-b-2 border-l-2 border-[#2F3CFF]/20" />
@@ -35,12 +35,12 @@ export function CertificateSection({ result }: CertificateSectionProps) {
             with a score of <span className="font-semibold text-[#2F3CFF]">{result.correctAnswers}/{result.totalQuestions}</span> ({result.percentage}%)
           </p>
 
-          <div className="flex items-center justify-center gap-8 text-xs text-[#777]">
+          <div className="flex flex-wrap items-center justify-center gap-4 text-xs text-[#777] sm:gap-8">
             <div>
               <p className="font-semibold text-[#07104F]">Level</p>
               <p>{result.level}</p>
             </div>
-            <div className="h-8 w-px bg-gray-200" />
+            <div className="hidden h-8 w-px bg-gray-200 sm:block" />
             <div>
               <p className="font-semibold text-[#07104F]">Date</p>
               <p>{new Date(result.dateTaken).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}</p>
@@ -50,12 +50,12 @@ export function CertificateSection({ result }: CertificateSectionProps) {
       </div>
 
       {/* Promo Banner */}
-      <div className="mb-6 rounded-xl bg-[#F5F5FF] px-6 py-4 text-center text-sm text-[#07104F]">
+      <div className="mb-6 rounded-xl bg-[#F5F5FF] px-4 py-3 text-center text-sm text-[#07104F] sm:px-6 sm:py-4">
         🎉 Great job! You&apos;re among our top achievers — enjoy <span className="font-semibold">20% off</span> your premium certificate!
       </div>
 
       {/* Certificate Actions */}
-      <div className="flex flex-wrap items-center justify-center gap-3">
+      <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
         <button className="rounded-full bg-[#F5A000] px-7 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#E09000]">
           Pay Now
         </button>

@@ -16,7 +16,7 @@ export function AboutSuccessFeatures({
   features,
 }: AboutSuccessFeaturesProps) {
   return (
-    <section className="bg-white py-24">
+    <section className="bg-white py-10 sm:py-16 lg:py-24">
       <Container>
         <h2 className="type-section text-center">
           {title}
@@ -26,13 +26,13 @@ export function AboutSuccessFeatures({
           {features.map((feature) => (
             <div
               key={feature.title}
-              className="rounded-xl bg-white p-8 text-center shadow-[0_8px_24px_rgba(0,0,0,0.06)] ring-0 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(0,0,0,0.1)]"
+              className="rounded-xl bg-white p-5 text-center shadow-[0_8px_24px_rgba(0,0,0,0.06)] ring-0 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(0,0,0,0.1)] sm:p-8"
             >
               <div className="mb-5 flex justify-center">{feature.icon}</div>
-              <h3 className="text-[18px] font-semibold text-[#111111]">
+              <h3 className="text-[16px] font-semibold text-[#111111] sm:text-[18px]">
                 {feature.title}
               </h3>
-              <p className="mt-3 text-[14px] leading-relaxed text-[#5F6368]">
+              <p className="mt-3 text-[13px] leading-relaxed text-[#5F6368] sm:text-[14px]">
                 {feature.description}
               </p>
             </div>

@@ -13,7 +13,7 @@ export function ContactForm({
   imageAlt = "Contact us",
 }: ContactFormProps) {
   return (
-    <section className="bg-white py-24">
+    <section className="bg-white py-14 md:py-24">
       <Container>
         <div className="flex flex-col gap-14 lg:flex-row lg:items-start">
           <div className="w-full lg:w-[46%]">

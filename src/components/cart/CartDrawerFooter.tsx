@@ -18,7 +18,7 @@ export function CartDrawerFooter({ total }: CartDrawerFooterProps) {
   };
 
   return (
-    <div className="mt-auto shrink-0 border-t border-[#ECECEC] px-6 py-5">
+    <div className="mt-auto shrink-0 border-t border-[#ECECEC] px-4 py-4 sm:px-6 sm:py-5">
       <div className="mb-4 flex items-center justify-between">
         <span className="text-sm font-medium text-gray-500">Total</span>
         <span className="text-base font-semibold text-gray-900">

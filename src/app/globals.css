@@ -58,98 +58,154 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
+/* ── Base Reset ── */
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
   body {
     @apply bg-page text-foreground;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
   }
   html {
     font-family: var(--font-poppins);
+    scroll-behavior: smooth;
+  }
+  img,
+  video,
+  svg {
+    max-width: 100%;
+    height: auto;
+  }
+  /* SEO-friendly: prevent text overflow */
+  h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
   }
 }
 
-/* ── Typography tokens ── */
+/* ── Responsive Typography Tokens ── */
 @layer base {
   :root {
-    --type-hero: 52px;
-    --type-page: 48px;
-    --type-section: 32px;
-    --type-blog-heading: 24px;
-    --type-card: 22px;
-    --type-body: 16px;
-    --type-label: 14px;
-    --type-small: 12px;
+    --type-hero: clamp(2rem, 5vw, 3.25rem);
+    --type-page: clamp(1.75rem, 4.5vw, 3rem);
+    --type-section: clamp(1.375rem, 3vw, 2rem);
+    --type-blog-heading: clamp(1.125rem, 2.5vw, 1.5rem);
+    --type-card: clamp(1rem, 2.2vw, 1.375rem);
+    --type-body: clamp(0.875rem, 1.5vw, 1rem);
+    --type-body-lg: clamp(1rem, 1.8vw, 1.125rem);
+    --type-label: clamp(0.75rem, 1.2vw, 0.875rem);
+    --type-small: clamp(0.6875rem, 1vw, 0.75rem);
+    --type-caption: clamp(0.625rem, 0.9vw, 0.75rem);
+    --type-btn: clamp(0.875rem, 1.3vw, 1rem);
+    --type-nav: clamp(0.875rem, 1.2vw, 1.0625rem);
+    --type-badge: clamp(0.625rem, 0.85vw, 0.75rem);
     --color-heading: #111111;
     --color-body: #5F6368;
     --color-muted: #8B8B8B;
   }
 }
 
+/* ── Typography Utilities (responsive) ── */
 @utility type-hero {
-  font-size: 52px;
+  font-size: var(--type-hero);
   font-weight: 600;
   line-height: 1.2;
   color: var(--color-heading);
 }
 
 @utility type-page {
-  font-size: 48px;
+  font-size: var(--type-page);
   font-weight: 600;
   line-height: 1.2;
   color: var(--color-heading);
 }
 
 @utility type-section {
-  font-size: 32px;
+  font-size: var(--type-section);
   font-weight: 600;
   line-height: 1.3;
   color: var(--color-heading);
 }
 
 @utility type-blog-heading {
-  font-size: 24px;
+  font-size: var(--type-blog-heading);
   font-weight: 600;
   line-height: 1.5;
   color: var(--color-heading);
 }
 
 @utility type-card {
-  font-size: 22px;
+  font-size: var(--type-card);
   font-weight: 600;
   line-height: 1.4;
   color: var(--color-heading);
 }
 
 @utility type-body {
-  font-size: 16px;
+  font-size: var(--type-body);
   font-weight: 400;
   line-height: 1.8;
   color: var(--color-body);
 }
 
+@utility type-body-lg {
+  font-size: var(--type-body-lg);
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--color-body);
+}
+
 @utility type-label {
-  font-size: 14px;
+  font-size: var(--type-label);
   font-weight: 500;
   color: var(--color-muted);
 }
 
 @utility type-small {
-  font-size: 12px;
+  font-size: var(--type-small);
   font-weight: 400;
   color: var(--color-muted);
 }
 
+@utility type-caption {
+  font-size: var(--type-caption);
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--color-muted);
+}
+
 @utility type-btn {
-  font-size: 16px;
+  font-size: var(--type-btn);
   font-weight: 500;
 }
 
+@utility type-nav {
+  font-size: var(--type-nav);
+  font-weight: 500;
+}
+
+@utility type-badge {
+  font-size: var(--type-badge);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+@utility type-overline {
+  font-size: var(--type-badge);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ── Font family ── */
 @utility font-urbanist {
   font-family: var(--font-urbanist);
 }
 
+/* ── Footer gradient ── */
 @utility bg-footer {
   background: linear-gradient(
     135deg,
@@ -158,6 +214,7 @@
   );
 }
 
+/* ── Animations ── */
 @keyframes pulse-soft {
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.08); }
@@ -165,4 +222,13 @@
 
 @utility animate-pulse-soft {
   animation: pulse-soft 3s ease-in-out infinite;
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@utility animate-fade-in-up {
+  animation: fade-in-up 0.5s ease-out both;
 }

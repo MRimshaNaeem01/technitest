@@ -20,7 +20,7 @@ export default function FaceAuthenticationPage({ params }: FaceAuthPageProps) {
 
   return (
     <main className="flex min-h-screen items-center justify-center bg-gradient-to-br from-[#ECECFF] to-[#F5F5FF] px-4 py-12">
-      <div className="relative w-full rounded-3xl bg-white p-10 pb-12 mx-10 shadow-[0_8px_40px_rgba(0,0,0,0.08)] sm:p-12">
+      <div className="relative w-full rounded-3xl bg-white p-6 pb-8 mx-4 shadow-[0_8px_40px_rgba(0,0,0,0.08)] sm:mx-10 sm:p-10 sm:pb-12 sm:shadow-[0_8px_40px_rgba(0,0,0,0.08)] md:p-12">
         <button
           onClick={() => router.back()}
           aria-label="Go back"
@@ -29,7 +29,7 @@ export default function FaceAuthenticationPage({ params }: FaceAuthPageProps) {
           <ArrowLeft className="size-8" />
         </button>
 
-        <h1 className="mb-2 text-center font-urbanist text-[40px] font-semibold leading-tight text-black">
+        <h1 className="mb-2 text-center font-urbanist text-[28px] font-semibold leading-tight text-black sm:text-[40px]">
           Face Authentication
         </h1>
 

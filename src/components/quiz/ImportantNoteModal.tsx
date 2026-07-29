@@ -42,7 +42,7 @@ export function ImportantNoteModal({
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-[440px] rounded-2xl bg-white p-8 shadow-2xl"
+        className="relative w-full max-w-[440px] rounded-2xl bg-white p-5 shadow-2xl sm:p-8"
         onClick={(e) => e.stopPropagation()}
       >
         <button

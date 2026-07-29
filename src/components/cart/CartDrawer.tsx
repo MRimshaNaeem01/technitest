@@ -57,7 +57,7 @@ export function CartDrawer() {
       {/* Drawer */}
       <div
         ref={drawerRef}
-        className={`absolute right-0 top-0 flex h-full flex-col bg-white shadow-[-10px_0_40px_rgba(0,0,0,0.15)] transition-transform duration-300 ease-in-out max-md:w-full md:w-[460px] lg:w-[520px] ${
+        className={`absolute right-0 top-0 flex h-full flex-col bg-white shadow-[-10px_0_40px_rgba(0,0,0,0.15)] transition-transform duration-300 ease-in-out max-md:w-full max-md:rounded-none md:w-[460px] md:rounded-l-2xl lg:w-[520px] ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
         style={{ borderRadius: "0" }}
@@ -65,17 +65,7 @@ export function CartDrawer() {
         aria-modal="true"
         aria-label="Shopping cart"
       >
-        {/* Desktop rounded corners */}
-        <style>{`
-          @media (min-width: 768px) {
-            .cart-drawer-panel {
-              border-top-left-radius: 16px;
-              border-bottom-left-radius: 16px;
-            }
-          }
-        `}</style>
-
-        <div className="cart-drawer-panel flex h-full flex-col">
+        <div className="flex h-full flex-col">
           <CartDrawerHeader itemCount={itemCount} />
 
           {itemCount === 0 ? (

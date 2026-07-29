@@ -133,7 +133,7 @@ export default function QuizDetailPage() {
             {relatedQuizzes.map((quiz) => (
               <div
                 key={quiz.id}
-                className="group cursor-pointer overflow-hidden rounded-xl bg-white shadow-sm"
+                className="group min-w-0 cursor-pointer overflow-hidden rounded-xl bg-white shadow-sm"
               >
                 <div className="relative overflow-hidden">
                   <Image
@@ -160,7 +160,7 @@ export default function QuizDetailPage() {
                   <p className="mb-4 text-sm italic text-indigo-500">
                     {quiz.category}
                   </p>
-                  <div className="flex items-center gap-3 text-xs text-gray-500">
+                  <div className="flex flex-wrap items-center gap-2 text-xs text-gray-500 sm:gap-3">
                     <span className="flex items-center gap-1">
                       <BarChart3 className="size-3.5" />
                       {quiz.level}

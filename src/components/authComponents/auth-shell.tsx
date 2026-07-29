@@ -38,7 +38,7 @@ export function AuthShell({
           </Link>
         </section>
 
-        <section className="flex min-h-screen items-center justify-center bg-white px-8 py-10 lg:px-12">
+        <section className="flex min-h-screen items-center justify-center bg-white px-4 py-8 sm:px-8 sm:py-10 lg:px-12">
           <div
             className={
               formSize === "wide"

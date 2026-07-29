@@ -70,7 +70,7 @@ export function QRCodeUploadForm({ onVerify, loading }: QRCodeUploadFormProps) {
   };
 
   return (
-    <VerificationCard className="flex-1 p-20">
+    <VerificationCard className="flex-1 p-6 sm:p-10 md:p-20">
       <div className="mb-5 flex justify-center">
         <div className="relative mx-auto h-[110px] w-[170px]">
           <Image
@@ -90,7 +90,7 @@ export function QRCodeUploadForm({ onVerify, loading }: QRCodeUploadFormProps) {
         </div>
       </div>
 
-      <h3 className="mb-10 text-center font-poppins text-[30px] font-medium text-black">
+      <h3 className="mb-6 text-center font-poppins text-[22px] font-medium text-black sm:mb-10 sm:text-[30px]">
         Verify by QR Code
       </h3>
 

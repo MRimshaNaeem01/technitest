@@ -23,7 +23,7 @@ export function QuizDetailHero({
             alt={imageAlt}
             width={1200}
             height={260}
-            className="h-[260px] w-full object-cover"
+            className="h-[160px] w-full object-cover sm:h-[200px] md:h-[260px]"
           />
         </div>
       </Container>

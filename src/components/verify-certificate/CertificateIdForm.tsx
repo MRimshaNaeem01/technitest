@@ -30,7 +30,7 @@ export function CertificateIdForm({ onVerify, loading }: CertificateIdFormProps)
   };
 
   return (
-    <VerificationCard className="flex-1 p-20">
+    <VerificationCard className="flex-1 p-6 sm:p-10 md:p-20">
       <div className="mb-5 flex justify-center">
         <Image
           src="/verify-certificate/verify-id.png"
@@ -41,7 +41,7 @@ export function CertificateIdForm({ onVerify, loading }: CertificateIdFormProps)
         />
       </div>
 
-      <h3 className="mb-10 text-center font-poppins text-[30px] font-medium text-black">
+      <h3 className="mb-6 text-center font-poppins text-[22px] font-medium text-black sm:mb-10 sm:text-[30px]">
         Verify by Certificate ID
       </h3>
 

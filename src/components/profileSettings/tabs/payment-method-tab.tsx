@@ -104,7 +104,7 @@ export function PaymentMethodTab() {
 
   return (
     <div className="rounded-xl bg-white p-6 shadow-[0_2px_12px_rgba(0,0,0,0.04)]">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-wrap items-center justify-between gap-3">
         <h3 className="font-poppins text-[18px] font-semibold text-[#0B0B0B]">
           Payment Method
         </h3>

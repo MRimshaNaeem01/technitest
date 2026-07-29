@@ -1,4 +1,26 @@
+import type { Metadata } from "next";
 import { CategoryHero } from "@/components/categories/category-hero";
+
+export const metadata: Metadata = {
+  title: "Categories | Technitest",
+  description:
+    "Browse a wide range of quiz categories on Technitest — from IT and Data Science to Digital Marketing and Business Management. Find the right quiz for your learning goals.",
+  openGraph: {
+    title: "Categories | Technitest",
+    description:
+      "Browse quiz categories on Technitest — IT, Data Science, Digital Marketing, and more.",
+    type: "website",
+  },
+  keywords: [
+    "quiz categories",
+    "IT quizzes",
+    "data science quizzes",
+    "digital marketing quizzes",
+    "business quizzes",
+    "online learning",
+    "Technitest categories",
+  ],
+};
 import { LearningCategories } from "@/components/learning-categories";
 import { TrendingQuizzes } from "@/components/trending-quizzes";
 
@@ -143,7 +165,7 @@ export default function CategoriesPage() {
         title="Test Your Knowledge"
         categories={categories}
         viewAllHref="#"
-        className="px-16"
+        className="px-4 md:px-16"
       />
       <TrendingQuizzes
         eyebrow="Quizzes"

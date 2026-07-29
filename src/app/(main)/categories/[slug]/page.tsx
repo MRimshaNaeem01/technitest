@@ -1,8 +1,11 @@
+import type { Metadata } from "next";
 import { BannerBreadcrumb } from "@/components/common/BannerBreadcrumb";
 import { Container } from "@/components/common/container";
 import { CategoryInnerHero } from "@/components/categoryInnerComponents/category-inner-hero";
 import { CategoryFilterSidebar } from "@/components/categoryInnerComponents/category-filter-sidebar";
 import { CategoryQuizList } from "@/components/categoryInnerComponents/category-quiz-list";
+
+type Props = { params: Promise<{ slug: string }> };
 
 const categoryLabels: Record<string, string> = {
   "health-wellness": "Health & Wellness",
@@ -15,6 +18,28 @@ const categoryLabels: Record<string, string> = {
   development: "Development",
   "data-science": "Data Science",
 };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const label = categoryLabels[slug] ?? slug.replace(/-/g, " ");
+  return {
+    title: `${label} Quizzes | Technitest`,
+    description: `Browse our collection of ${label.toLowerCase()} quizzes designed to test and improve your knowledge. Start learning with Technitest today.`,
+    openGraph: {
+      title: `${label} Quizzes | Technitest`,
+      description: `Browse ${label.toLowerCase()} quizzes on Technitest to test and improve your knowledge.`,
+      type: "website",
+    },
+    keywords: [
+      `${label.toLowerCase()} quizzes`,
+      "online quizzes",
+      "skill assessment",
+      "Technitest",
+      "quiz category",
+      "test your knowledge",
+    ],
+  };
+}
 
 const allQuizzes = Array.from({ length: 8 }, (_, i) => ({
   id: String(i + 1),
@@ -83,7 +108,7 @@ export default async function CategoryPage({
         title={`${label} Quizzes`}
         description={`Browse our collection of ${label.toLowerCase()} quizzes designed to test and improve your knowledge.`}
       />
-      <section className="bg-white py-16">
+      <section className="bg-white py-10 md:py-16">
         <Container>
           <div className="flex flex-col gap-8 lg:flex-row">
             <CategoryFilterSidebar

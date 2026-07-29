@@ -32,7 +32,7 @@ export function ReportProblemForm() {
   };
 
   return (
-    <section className="bg-white py-20">
+    <section className="bg-white py-10 sm:py-20">
       <Container>
         <div className="mx-auto max-w-[730px]">
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">

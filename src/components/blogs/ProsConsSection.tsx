@@ -28,8 +28,8 @@ export function ProsConsSection({
     <section className={className}>
       <div className="space-y-10">
         {/* Pros Panel */}
-        <div className="relative rounded-[18px] bg-[#EEF3F8] px-8 pb-8 pt-14 md:px-12 md:pb-10 md:pt-16">
-          <span className="absolute left-14 top-0 flex h-[58px] min-w-[90px] items-center justify-center bg-green-500 px-5 text-xl font-semibold text-white [clip-path:polygon(0_0,100%_0,100%_72%,50%_100%,0_72%)]">
+        <div className="relative rounded-[18px] bg-[#EEF3F8] px-5 pb-6 pt-12 md:px-12 md:pb-10 md:pt-16">
+          <span className="absolute left-10 top-0 flex h-[46px] min-w-[70px] items-center justify-center bg-green-500 px-3 text-base font-semibold text-white [clip-path:polygon(0_0,100%_0,100%_72%,50%_100%,0_72%)] md:left-14 md:h-[58px] md:min-w-[90px] md:px-5 md:text-xl">
             {prosTitle}
           </span>
 
@@ -55,8 +55,8 @@ export function ProsConsSection({
         </div>
 
         {/* Cons Panel */}
-        <div className="relative rounded-[18px] bg-[#EEF3F8] px-8 pb-8 pt-14 md:px-12 md:pb-10 md:pt-16">
-          <span className="absolute left-14 top-0 flex h-[58px] min-w-[90px] items-center justify-center bg-red-500 px-5 text-xl font-semibold text-white [clip-path:polygon(0_0,100%_0,100%_72%,50%_100%,0_72%)]">
+        <div className="relative rounded-[18px] bg-[#EEF3F8] px-5 pb-6 pt-12 md:px-12 md:pb-10 md:pt-16">
+          <span className="absolute left-10 top-0 flex h-[46px] min-w-[70px] items-center justify-center bg-red-500 px-3 text-base font-semibold text-white [clip-path:polygon(0_0,100%_0,100%_72%,50%_100%,0_72%)] md:left-14 md:h-[58px] md:min-w-[90px] md:px-5 md:text-xl">
             {consTitle}
           </span>
 

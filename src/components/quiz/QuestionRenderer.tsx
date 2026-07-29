@@ -18,7 +18,7 @@ export function QuestionRenderer({
 }: QuestionRendererProps) {
   return (
     <div>
-      <p className="max-w-[620px] font-poppins text-[26px] font-medium leading-[1.45] text-black">
+      <p className="max-w-[620px] font-poppins text-[20px] font-medium leading-[1.45] text-black sm:text-[26px]">
         {question.question}
       </p>
 
@@ -39,7 +39,7 @@ export function QuestionRenderer({
             return (
               <label
                 key={option.id}
-                className={`flex cursor-pointer items-center gap-5 font-poppins text-[20px] font-medium text-black transition-colors ${
+                className={`flex cursor-pointer items-center gap-5 font-poppins text-[16px] font-medium text-black transition-colors sm:text-[20px] ${
                   isLocked ? "cursor-not-allowed opacity-60" : ""
                 }`}
               >

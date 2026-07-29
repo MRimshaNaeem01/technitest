@@ -35,7 +35,7 @@ export function OrderSummary({
   const total = items.reduce((sum, item) => sum + item.finalPrice, 0) - coinsDiscount;
 
   return (
-    <div className="rounded-2xl bg-[#F7F7FF] p-6 lg:p-8">
+    <div className="rounded-2xl bg-[#F7F7FF] p-4 sm:p-6 lg:p-8">
       <h2 className="mb-6 text-[18px] font-semibold text-[#07104F]">
         Order Summary
       </h2>

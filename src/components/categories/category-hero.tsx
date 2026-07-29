@@ -7,8 +7,8 @@ type CategoryHeroProps = {
 
 export function CategoryHero({ title, description }: CategoryHeroProps) {
   return (
-    <section className="relative flex min-h-[280px] items-center justify-center overflow-hidden bg-[#F7F7FF]">
-      <div className="py-14 text-center">
+    <section className="relative flex min-h-[200px] items-center justify-center overflow-hidden bg-[#F7F7FF] md:min-h-[280px]">
+      <div className="px-4 py-10 text-center md:px-6 md:py-14">
         <div className="mb-4">
           <BannerBreadcrumb currentPage="Categories" />
         </div>

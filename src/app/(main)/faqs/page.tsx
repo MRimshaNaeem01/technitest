@@ -1,5 +1,27 @@
+import type { Metadata } from "next";
 import { BannerBreadcrumb } from "@/components/common/BannerBreadcrumb";
 import { Container } from "@/components/common/container";
+
+export const metadata: Metadata = {
+  title: "FAQs | Technitest",
+  description:
+    "Find quick answers to the most common questions about Technitest quizzes, certificates, transactions, and how the platform works.",
+  openGraph: {
+    title: "FAQs | Technitest",
+    description:
+      "Find quick answers to common questions about Technitest quizzes, certificates, and the platform.",
+    type: "website",
+  },
+  keywords: [
+    "FAQs",
+    "frequently asked questions",
+    "Technitest help",
+    "quiz questions",
+    "certificate questions",
+    "platform support",
+    "Technitest FAQ",
+  ],
+};
 import { FaqHero } from "@/components/faqComponents/faq-hero";
 import { FaqSidebar } from "@/components/faqComponents/faq-sidebar";
 import { FaqAccordion } from "@/components/faqComponents/faq-accordion";
@@ -63,9 +85,9 @@ export default function FaqsPage() {
         title="Frequently Asked Questions"
         description="Find quick answers to the most common questions about our courses, certificates, and platform."
       />
-      <section className="bg-white py-20">
+      <section className="bg-white py-12 md:py-20">
         <Container>
-          <h2 className="mb-10 text-center text-[32px] font-semibold text-black lg:text-left">
+          <h2 className="mb-10 text-center text-[24px] font-semibold text-black sm:text-[32px] lg:text-left">
             Got Questions? We've Got Answers
           </h2>
           <div className="flex flex-col gap-8 lg:flex-row">

@@ -18,7 +18,7 @@ export function ImageQuestionOptions({
   isLocked,
 }: ImageQuestionOptionsProps) {
   return (
-    <div className="grid grid-cols-2 gap-x-8 gap-y-7 sm:grid-cols-2">
+    <div className="grid grid-cols-2 gap-x-4 gap-y-5 sm:gap-x-8 sm:gap-y-7">
       {options.map((option, index) => {
         const isSelected = selectedAnswer === option.id;
 
@@ -29,7 +29,7 @@ export function ImageQuestionOptions({
             onClick={() => !isLocked && onSelect(option.id)}
             disabled={isLocked}
             className={cn(
-              "relative h-[150px] w-[210px] overflow-hidden rounded-[9px] border-2 transition sm:h-[150px] sm:w-[210px]",
+              "relative h-[120px] w-full overflow-hidden rounded-[9px] border-2 transition sm:h-[150px] sm:max-w-[210px]",
               isLocked && "cursor-not-allowed opacity-60",
               isSelected
                 ? "border-[#F59E0B]"

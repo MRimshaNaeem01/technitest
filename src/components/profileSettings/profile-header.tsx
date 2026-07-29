@@ -60,8 +60,8 @@ export function ProfileHeader({ user }: ProfileHeaderProps) {
         "
       >
         {/* ── Profile Identity ── */}
-        <div className="flex items-center gap-6">
-          <div className="relative h-[150px] w-[150px] shrink-0 overflow-hidden rounded-full border-[3px] border-[#F4D394]">
+        <div className="flex items-center gap-4 sm:gap-6">
+          <div className="relative h-[100px] w-[100px] shrink-0 overflow-hidden rounded-full border-[3px] border-[#F4D394] sm:h-[150px] sm:w-[150px]">
             <Image
               src={user.avatar}
               alt={user.name}
@@ -161,7 +161,7 @@ export function ProfileHeader({ user }: ProfileHeaderProps) {
         </div>
 
         {/* ── Coins Section ── */}
-        <div className="min-w-[280px]">
+        <div className="min-w-0 sm:min-w-[280px]">
           <div className="flex items-center justify-between">
             <h3 className="font-poppins text-[13px] font-bold uppercase tracking-wider text-[#0B0B0B]">
               Coins

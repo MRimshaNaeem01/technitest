@@ -30,9 +30,9 @@ export function Testimonials({
   if (!t) return null;
 
   return (
-    <section className="relative overflow-hidden bg-white py-20">
+    <section className="relative overflow-hidden bg-white py-10 sm:py-16 lg:py-20">
       <Container>
-        <div className="mb-10">
+        <div className="mb-8 sm:mb-10">
           {eyebrow && (
             <p className="mb-2 text-sm font-medium text-brand">{eyebrow}</p>
           )}
@@ -41,7 +41,7 @@ export function Testimonials({
           </h2>
         </div>
 
-        <div className="flex flex-col items-center gap-10 lg:flex-row lg:items-start">
+        <div className="flex flex-col items-center gap-6 sm:gap-10 lg:flex-row lg:items-start">
           <div className="shrink-0">
             <div className="overflow-hidden rounded-xl">
               <Image
@@ -49,7 +49,7 @@ export function Testimonials({
                 alt={t.imageAlt ?? t.name}
                 width={300}
                 height={410}
-                className="h-[410px] w-[300px] object-cover"
+                className="h-[280px] w-[200px] sm:h-[340px] sm:w-[250px] lg:h-[410px] lg:w-[300px] object-cover"
               />
             </div>
             <div className="mt-4 flex items-center justify-center gap-2 lg:justify-start">
@@ -59,19 +59,19 @@ export function Testimonials({
             </div>
           </div>
 
-          <div className="flex-1">
-            <div className="mb-6 flex size-10 items-center justify-center rounded-lg bg-[#ECECFF]">
+          <div className="flex-1 min-w-0">
+            <div className="mb-4 sm:mb-6 flex size-10 items-center justify-center rounded-lg bg-[#ECECFF]">
               <Quote className="size-5 text-indigo-500" />
             </div>
 
-            <p className="text-[18px] leading-relaxed text-[#5F6368]">
+            <p className="type-body-lg leading-relaxed text-[#5F6368]">
               {t.review}
             </p>
 
-            <hr className="my-8 border-gray-200" />
+            <hr className="my-6 sm:my-8 border-gray-200" />
 
             <div className="flex flex-wrap items-center gap-3">
-              <div>
+              <div className="min-w-0">
                 <p className="text-[16px] font-semibold text-[#111111]">{t.name}</p>
                 <p className="text-sm text-indigo-500">{t.role}</p>
               </div>

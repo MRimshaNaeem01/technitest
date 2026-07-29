@@ -13,7 +13,7 @@ export function CategoryFilterSidebar({
   levels,
 }: CategoryFilterSidebarProps) {
   return (
-    <aside className="w-full shrink-0 lg:w-[260px]">
+    <aside className="w-full shrink-0 min-w-0 lg:w-[260px]">
       <div className="rounded-xl bg-white p-6 shadow-sm">
         <h3 className="mb-4 font-semibold text-black">Select by Category</h3>
         <ul className="space-y-3">
