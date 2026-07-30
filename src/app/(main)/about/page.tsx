@@ -164,7 +164,10 @@ export default function AboutPage() {
       <AboutWideImage imageSrc="/aboutUs/img3.png" />
       <JoinThousands
         title="Join Thousands Who Trust Us"
-        description="Become part of a growing community of learners who are taking control of their education and earning certificates that matter."
+        paragraphs={[
+          "In today's fast-paced digital world, learning doesn't have to be slow, boring, or expensive. Technitest is designed to help you learn faster, smarter, and more effectively — anytime, anywhere.",
+          "If you're ready to take control of your learning, test your skills, and prove your knowledge — join thousands of satisfied learners and get started today.",
+        ]}
         imageSrc="/aboutUs/img4.png"
       />
        <Testimonials

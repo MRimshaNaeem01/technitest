@@ -10,45 +10,6 @@ type AboutIntroProps = {
   imageAlt?: string;
 };
 
-function DotGrid({ className }: { className?: string }) {
-  return (
-    <div
-      aria-hidden
-      className={className}
-      style={{
-        backgroundImage:
-          "radial-gradient(circle, #B8B8CC 1.5px, transparent 1.5px)",
-        backgroundSize: "11px 11px",
-      }}
-    />
-  );
-}
-
-function SquiggleArrow({ className }: { className?: string }) {
-  return (
-    <svg
-      aria-hidden
-      className={className}
-      viewBox="0 0 80 80"
-      fill="none"
-    >
-      <path
-        d="M10 54C22 36 30 58 42 42C54 26 60 14 70 22"
-        stroke="currentColor"
-        strokeWidth="2.5"
-        strokeLinecap="round"
-      />
-      <path
-        d="M62 16L72 24L64 32"
-        stroke="currentColor"
-        strokeWidth="2.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
 function SupportChatBadge({ className }: { className?: string }) {
   return (
     <span
@@ -70,37 +31,6 @@ function SupportChatBadge({ className }: { className?: string }) {
   );
 }
 
-function AboutIntroVisual({
-  imageSrc,
-  imageAlt,
-}: {
-  imageSrc: string;
-  imageAlt: string;
-}) {
-  return (
-    <div className="relative mx-auto w-full max-w-147.5">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-x-0 bottom-0 top-[20%] rounded-[28px] bg-[#F2F3FE] sm:rounded-[32px] sm:top-[18%] lg:top-[4%]"
-      />
-
-      <SquiggleArrow className="pointer-events-none absolute right-[8%] top-[38%] z-[1] h-14 w-14 text-[#F5A623] sm:h-18 sm:w-18" />
-
-      <DotGrid className="pointer-events-none absolute -left-2 top-[54%] z-[3] size-[66px] -translate-y-1/2 sm:-left-3 sm:size-[77px]" />
-
-      <Image
-        src={imageSrc}
-        alt={imageAlt}
-        width={440}
-        height={560}
-        priority
-        sizes="(max-width: 640px) 360px, 480px"
-        className="relative z-[4] mx-auto block h-auto w-full max-w-[420px] object-contain"
-      />
-    </div>
-  );
-}
-
 export function AboutIntro({
   eyebrow = "About Us",
   title,
@@ -112,8 +42,15 @@ export function AboutIntro({
     <section className="relative bg-white pb-6 pt-10 sm:pb-8 sm:pt-14 lg:pb-10 lg:pt-16">
       <Container>
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-12 xl:gap-16">
-          <div className="min-w-0 w-full overflow-visible lg:justify-self-start">
-            <AboutIntroVisual imageSrc={imageSrc} imageAlt={imageAlt} />
+          <div className="flex min-w-0 justify-center lg:justify-start">
+            <Image
+              src={imageSrc}
+              alt={imageAlt}
+              width={520}
+              height={520}
+              priority
+              className="h-auto w-full max-w-[280px] object-contain sm:max-w-[360px] lg:max-w-[430px]"
+            />
           </div>
 
           <div className="relative min-w-0 lg:py-4 lg:pr-20">

@@ -6,7 +6,7 @@ import { Container } from "@/components/common/container";
 type JoinThousandsProps = {
   eyebrow?: string;
   title: string;
-  description: string;
+  paragraphs: string[];
   buttonText?: string;
   buttonHref?: string;
   imageSrc: string;
@@ -14,9 +14,9 @@ type JoinThousandsProps = {
 };
 
 export function JoinThousands({
-  eyebrow = "Community",
+  eyebrow,
   title,
-  description,
+  paragraphs,
   buttonText = "Get Started",
   buttonHref = "/",
   imageSrc,
@@ -25,26 +25,28 @@ export function JoinThousands({
   return (
     <section className="bg-[#F7F7FF] py-10 sm:py-16 lg:py-24">
       <Container>
-        <div className="flex flex-col items-center gap-8 lg:flex-row lg:gap-14">
-          <div className="w-full shrink-0 max-w-[420px] lg:max-w-none">
+        <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-14">
+          <div className="min-w-0 w-full">
             <Image
               src={imageSrc}
               alt={imageAlt}
-              width={420}
-              height={380}
-              className="h-auto w-full max-w-[420px] rounded-2xl object-cover shadow-[0_8px_24px_rgba(0,0,0,0.06)]"
+              width={560}
+              height={420}
+              className="h-auto w-full rounded-2xl object-cover shadow-[0_8px_24px_rgba(0,0,0,0.06)]"
             />
           </div>
 
-          <div>
-            {eyebrow && (
+          <div className="min-w-0">
+            {eyebrow ? (
               <p className="mb-3 text-sm font-medium text-brand">{eyebrow}</p>
-            )}
-            <h2 className="type-section">
-              {title}
-            </h2>
-            <p className="mt-4 max-w-[520px] type-body">{description}</p>
-            <div className="mt-10">
+            ) : null}
+            <h2 className="type-section">{title}</h2>
+            <div className="mt-5 space-y-4 type-body leading-relaxed text-[#5F6368] sm:mt-6">
+              {paragraphs.map((paragraph, index) => (
+                <p key={index}>{paragraph}</p>
+              ))}
+            </div>
+            <div className="mt-8 sm:mt-10">
               <AppButton href={buttonHref} size="lg">
                 {buttonText}
               </AppButton>
